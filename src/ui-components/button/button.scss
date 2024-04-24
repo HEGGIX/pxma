@@ -1,0 +1,19 @@
+.button{
+    width: 100%;
+    height: 56px;
+    background: #7B61FF;
+    border: 1px solid #7B61FF;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 10px;
+    line-height: 24px;
+    margin: 16px 0 32px 0;
+    &:hover{
+        background: #917CFF;
+        transition: 0.4s;
+        border-color: #917CFF;
+    }
+    &:focus{
+        outline: none;
+    }
+}

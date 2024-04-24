@@ -1,0 +1,36 @@
+.person-btn__container{
+    width: 265px;
+    height: 56px;
+    display: flex;
+    justify-content: space-around;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.person-btn__laters{
+    width: 56px;
+    height: 56px;
+    background: #7B61FF;
+    border: 1px solid #7B61FF;
+    color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 10px;
+    line-height: 24px;
+}
+
+.person-btn__name{
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.person-btn{
+    background: inherit;
+    &:active{
+        border-color: inherit;
+    }
+    &:focus{
+        outline: none;
+    }
+}

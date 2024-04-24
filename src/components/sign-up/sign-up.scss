@@ -1,0 +1,46 @@
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./background.png), rgba(0, 0, 0, 1);
+    // background-size: cover;
+}
+
+.sign-up__container{
+    width: 574px;
+    background: #242426;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.form-title{
+    color: #FFFFFF;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: left;
+    margin: 40px 0;
+}
+
+.form-question{
+    color: #80858B;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 40px 0;
+}
+
+.form-question__link{
+    color: #7B61FF;
+    background: none;
+    margin: 0;
+    padding:0 0 0 5px;
+    border: none;
+    &:hover{
+        cursor: pointer;
+        transition: 0.3s;
+        outline: none;
+        color: #917CFF;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+
