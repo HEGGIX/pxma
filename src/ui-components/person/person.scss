@@ -3,6 +3,7 @@
     height: 56px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     &:hover{
         cursor: pointer;
     }
@@ -11,6 +12,9 @@
 .person-btn__laters{
     width: 56px;
     height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: #7B61FF;
     border: 1px solid #7B61FF;
     color: #FFFFFF;
@@ -27,10 +31,21 @@
 
 .person-btn{
     background: inherit;
+    outline: none;
+    border: none;
+    width: 15%;
+    height: 40px;
     &:active{
         border-color: inherit;
     }
     &:focus{
         outline: none;
+    }
+    &:hover{
+        border: 1px solid #7B61FF;
+        border-radius: 10px;
+    }
+    .person-btn__arrow{
+        cursor: pointer;
     }
 }
