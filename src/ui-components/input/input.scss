@@ -1,10 +1,10 @@
-// body{
-//     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../styles/images/background.png), rgba(0, 0, 0, 1);
-//     background-size: cover;
-// }
+.input-container{
+    width: 100%;
+}
 
 .form-input__title{
     color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
     font-size: 16px;
     line-height: 24px;
     text-align: left;
@@ -12,12 +12,13 @@
 }
 
 .form-input{
-    width: 473px;
+    width: 96%;
     height: 56px;
     background: #323537;
     color: #80858B;
     border: 1px solid #323537;
     border-radius: 10px;
+    font-family: "Exo 2", sans-serif;
     font-size: 16px;
     line-height: 24px;
     margin: 8px 0 24px 0;

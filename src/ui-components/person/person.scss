@@ -4,9 +4,6 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    &:hover{
-        cursor: pointer;
-    }
 }
 
 .person-btn__laters{
@@ -18,6 +15,7 @@
     background: #7B61FF;
     border: 1px solid #7B61FF;
     color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
     font-size: 16px;
     border-radius: 10px;
     line-height: 24px;
@@ -25,6 +23,7 @@
 
 .person-btn__name{
     color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
     font-size: 16px;
     line-height: 24px;
 }
@@ -44,6 +43,7 @@
     &:hover{
         border: 1px solid #7B61FF;
         border-radius: 10px;
+        cursor: pointer;
     }
     .person-btn__arrow{
         cursor: pointer;
