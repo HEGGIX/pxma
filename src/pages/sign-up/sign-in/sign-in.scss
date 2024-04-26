@@ -1,0 +1,69 @@
+body{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./background.png), rgba(0, 0, 0, 1);
+    // background-size: cover;
+}
+
+.sign-in{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sign-in__container{
+    width: 31.89%;
+    background: #242426;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 120px;
+}
+
+.sign-in__wrapper{
+    width: 86.1%;
+}
+
+.sign-in__title{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    margin: 40px 0;
+}
+
+.sign-in__question{
+    color: #80858B;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    margin: 0 0 40px 0;
+}
+
+.sign-in__link{
+    color: #7B61FF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    background: none;
+    margin: 0;
+    padding:0 0 0 5px;
+    border: none;
+    &:hover{
+        cursor: pointer;
+        transition: 0.3s;
+        outline: none;
+        color: #917CFF;
+    }
+    &:focus{
+        outline: none;
+    }
+}
+
+.sign-in__patent{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    margin-top: 203px;
+}

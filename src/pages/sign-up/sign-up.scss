@@ -3,27 +3,30 @@ body{
     // background-size: cover;
 }
 
-.root{
+.logo{
+    margin-top: 43px;
+    align-self: flex-start;
+}
+
+.sign-up{
     width: 100%;
-    height: auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
 .sign-up__container{
     width: 31.89%;
-    height: auto;
     background: #242426;
     display: flex;
     justify-content: center;
     text-align: center;
     border-radius: 10px;
-    margin-top: 80px;
+    margin-top: 45px;
 }
 
 .sign-up__wrapper{
-    width: 86.24%;
+    width: 86.1%;
 }
 
 .sign-up__title{
@@ -63,10 +66,9 @@ body{
     }
 }
 
-.patent{
+.sign-up__patent{
     color: #FFFFFF;
     font-family: "Exo 2", sans-serif;
     font-size: 16px;
-    text-align: center;
-    margin: 87px 0 24px 0;
+    margin-top: 50px;
 }
