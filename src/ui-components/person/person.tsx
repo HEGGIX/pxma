@@ -1,7 +1,7 @@
 import "./person.scss"
 import arrow from "./person-arrow.png"
 
-export const UserButton = (props) => {
+export const Person = (props) => {
     return(
         <div className="person-btn__container">
             <div className="person-btn__laters">

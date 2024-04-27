@@ -1,0 +1,30 @@
+.search{
+    width: 63.5%;
+    padding: 16px 20px;
+    background: url("./search-img.png") no-repeat center right, #323537;
+    background-position: 98.3%;
+    color: #80858B;
+    border-radius: 10px;
+    border: 1px solid #323537;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    outline: none;
+    &:hover{
+        cursor: pointer;
+    }
+    &:focus{
+        color: #FFFFFF;
+        border: 2px solid ;
+        outline: none;
+        border: 2px solid #7B61FF;
+    }
+    &:active{
+        color: #FFFFFF;
+    }
+    &:disabled{
+        background: #80858B;
+    }
+}
+
