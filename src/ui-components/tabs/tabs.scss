@@ -1,5 +1,11 @@
+.tabs{
+    display: flex;
+    flex-direction: column;
+}
+
 .tabs-wrapper{
     width: 9%;
+    justify-self: first baseline;
 }
 
 .tabs-container{
@@ -19,6 +25,9 @@
         color: #7B61FF;
         transition: 0.3s;
     }
+    &:first-child{
+        margin-top: 60px;
+    }
 }
 
 .tabs-text{
@@ -29,3 +38,12 @@
     color: #80858B;
     margin-left: 20px;
 }
+
+.tabs-patent{
+    font-family: "Exo 2", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #80858B;
+}
+

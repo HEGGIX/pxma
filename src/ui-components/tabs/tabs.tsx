@@ -7,22 +7,24 @@ import {ReactComponent as Settings} from "../../assets/settings.svg"
 export const Tabs = () => {
     return(
         <>
-        <div className = "tabs-wrapper">
-            <div className = "tabs-container">
-                <Home className = "tabs-logo"/>
-                <span className = "tabs-text">Home</span>
-            </div>
-            <div className = "tabs-container">
-                <Trends className = "tabs-logo"/>
-                <span className = "tabs-text">Trends</span>
-            </div>
-            <div className = "tabs-container">
-                <Favorites className = "tabs-logo"/>
-                <span className = "tabs-text">Favorites</span>
-            </div>
-            <div className = "tabs-container">
-                <Settings className = "tabs-logo"/>
-                <span className = "tabs-text">Settings</span>
+        <div className = "tabs">
+            <div className = "tabs-wrapper">
+                <div className = "tabs-container">
+                    <Home className = "tabs-logo"/>
+                    <span className = "tabs-text">Home</span>
+                </div>
+                <div className = "tabs-container">
+                    <Trends className = "tabs-logo"/>
+                    <span className = "tabs-text">Trends</span>
+                </div>
+                <div className = "tabs-container">
+                    <Favorites className = "tabs-logo"/>
+                    <span className = "tabs-text">Favorites</span>
+                </div>
+                <div className = "tabs-container">
+                    <Settings className = "tabs-logo"/>
+                    <span className = "tabs-text">Settings</span>
+                </div>
             </div>
         </div>
         </>
