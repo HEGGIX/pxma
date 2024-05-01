@@ -1,0 +1,45 @@
+.sort-container{
+    width: 84.47%;
+    background: #242426;
+    border-bottom: 2px solid #323537;
+}
+
+.sort-title{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.sort-btn__container{
+    width: 100%;
+    margin-top: 8px;
+    padding-bottom: 30px;
+}
+
+.sort-btn{
+    width: 50%;
+    height: 55px;
+    background: #323537;
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    outline: none;
+    border: 1px solid #323537;
+    &:hover{
+        cursor: pointer;
+        background: #242426;
+        transition: 0.3s;
+    }
+}
+
+.rating-btn{
+    border-radius: 10px 0 0 10px;
+}
+
+.year-btn{
+    border-radius: 0 10px 10px 0;
+}

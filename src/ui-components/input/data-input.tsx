@@ -25,5 +25,10 @@ export const inputData:inputText = [
         title: "Confirm password",
         type: "password",
         placeholder: "Confirm password"
+    },
+    {
+        title: "Full or short movie name",
+        type: "text",
+        placeholder: "Your text"
     }
 ]

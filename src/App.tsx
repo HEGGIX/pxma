@@ -4,13 +4,15 @@ import './App.css'
 // import { UserButton } from './ui-components/person/person'
 // import { SignIn } from './pages/sign-up/sign-in/sign-in'
 // import { Layout } from './Layout'
-import { Layout } from './Layout'
-import { Movies } from './components/movies/movies'
+// import { Layout } from './Layout'
+// import { Movies } from './components/movies/movies'
+import { Filters } from './components/filters/filters'
+
 
 function App() {
   return (
     <>
-    <Layout/>
+    <Filters/>
     {/* <Movies/> */}
     {/* <Layout/>
     <BrowserRouter>
