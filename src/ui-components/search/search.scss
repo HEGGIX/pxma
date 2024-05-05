@@ -1,8 +1,13 @@
-.search{
+.search-container{
     width: 63.5%;
+    display: flex;
+}
+
+.search{
+    width: 100%;
+    flex-grow: 1;
     padding: 16px 20px;
-    background: url("./search-img.png") no-repeat center right, #323537;
-    background-position: 98.3%;
+    background: #323537;
     color: #80858B;
     border-radius: 10px;
     border: 1px solid #323537;
@@ -25,6 +30,22 @@
     }
     &:disabled{
         background: #80858B;
+    }
+}
+
+.serarch-btn{
+    position: fixed;
+    right: 430px;
+    top: 60px;
+    background: #323537;
+    outline: none;
+    border: none;
+    &:hover{
+        cursor: pointer;
+        path{
+            fill: #7B61FF;
+            transition: 0.3s;
+           }
     }
 }
 

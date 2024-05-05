@@ -2,6 +2,15 @@
     width: 26.82%;
     background: #242426;
     border-radius: 10px 0 0 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+}
+
+.filters.active{
+    transform: translateX(0);
 }
 
 .filters-wrapper{
@@ -47,4 +56,17 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
+}
+
+.filters-btn__container{
+    width: 84.47%;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    &:first-child{
+        width: 45%;
+    }
+    &:last-child{
+        width: 65%;
+    }
 }

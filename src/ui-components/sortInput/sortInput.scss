@@ -1,5 +1,6 @@
 .sort-input__container{
     width: 84.47%;
+    margin-bottom: 25px;
 }
 
 .sort-input__title{
@@ -8,7 +9,6 @@
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
-    margin-top: 24px;
 }
 
 .sort-input__wrapper{
@@ -19,7 +19,7 @@
 }
 
 .sort-input{
-    width: 45.98%;
+    width: 42.53%;
     height: 55px;
     background: #323537;
     color: #80858B;
@@ -29,7 +29,24 @@
     font-size: 16px;
     line-height: 24px;
     outline: none;
-    &::placeholder{
-        padding-left: 15px;
+    padding-left: 15px;
+    &:focus{
+        color: #FFFFFF;
+        border: 2px solid ;
+        outline: none;
+        border: 2px solid #7B61FF;
     }
+    &:hover{
+        cursor: pointer;
+    }
+    &:active{
+        color: #FFFFFF;
+    }
+    &:disabled{
+        background: #80858B;
+    }
+}
+
+.country-input__container{
+    margin-bottom: 110px;
 }
