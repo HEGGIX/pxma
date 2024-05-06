@@ -6,14 +6,20 @@ import './App.css'
 import { Layout } from './Layout'
 // import { Movies } from './components/movies/movies'
 import { Filters } from './components/filters/filters'
-
+import { FiltersContext } from './context/context'
+import { useState } from "react";
 
 function App() {
+  const [isActive, setIsactive] = useState(false);
   return (
     <>
-    <Filters/>
+      <FiltersContext.Provider value={{
+          isActive: isActive, setIsactive: setIsactive 
+        }}>
+        <Filters/>
+        <Layout/>
+      </FiltersContext.Provider>
     {/* <Movies/> */}
-    <Layout/>
     {/* <BrowserRouter>
       <Routes>
             <Route path='/sign-in' element = {<SignIn/>}/>
