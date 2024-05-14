@@ -2,13 +2,21 @@ import { Input } from "../../ui-components/input/input"
 import { Button } from "../../ui-components/button/button"
 import { inputData } from "../../ui-components/input/data-input"
 import { useNavigate } from "react-router-dom"
+import { useDispatch } from "react-redux"
+import { createUser } from "../../store/userSlice"
+import { useEffect } from "react"
 import logo from "./pixema.png"
 
 import "./sign-up.scss"
 
 
+
 export const SignUp = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(createUser)
+    })
     return(
         <>
         <div className="sign-up">
@@ -20,7 +28,7 @@ export const SignUp = () => {
                     <Input type={inputData[1].type} placeholder={inputData[1].placeholder} title = {inputData[1].title}/>
                     <Input type={inputData[2].type} placeholder={inputData[2].placeholder} title = {inputData[2].title}/>
                     <Input type={inputData[3].type} placeholder={inputData[3].placeholder} title = {inputData[3].title}/>
-                    <Button text={"Sign up"}/>
+                    <Button text={"Sign up"} onClick={() => console.log("hello")}/>
                     <p className="sign-up__question">Already have an account?<button className="sign-up__link" onClick={()=>navigate("/sign-in")}> Sign in</button></p>
                 </div>
             </div>

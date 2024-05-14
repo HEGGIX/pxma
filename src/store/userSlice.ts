@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const createUser=createAsyncThunk('user/createUser',async (signinObj:{
-    username: number;
+    username: string;
     email: string;
     password: string;
     course_group: number;
@@ -36,13 +36,27 @@ export const createUser=createAsyncThunk('user/createUser',async (signinObj:{
 const userSlice = createSlice({
     name:'user',
     initialState:{
-       user:null
+       user:null,
+       status: null as null|'loading'|'fulfilled'|'rejected',
+       error: null as null|string
     },
     reducers:{
         addUser(state,action){
             state.user=action.payload
         },
         
+    },
+    extraReducers: builder =>{
+        builder
+        .addCase(createUser.pending, (state) => {
+            state.status = "loading",
+            state.error = null
+        })
+        .addCase(createUser.fulfilled, (state,action) => {
+            state.status = "fulfilled",
+            state.error = null,
+            state.user = action.payload
+        })
     }
 })
 export const {addUser}=userSlice.actions

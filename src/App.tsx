@@ -6,6 +6,7 @@ import { FiltersContext } from './context/context'
 import { useState } from "react";
 import { SignIn } from './pages/sign-up/sign-in/sign-in';
 import { SignUp } from './pages/sign-up/sign-up';
+import { UserContext } from './context/context';
 
 function App() {
   const [isActive, setIsactive] = useState(false);
