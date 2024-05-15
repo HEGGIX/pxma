@@ -12,19 +12,19 @@ function App() {
   const [isActive, setIsactive] = useState(false);
   return (
     <>
-      {/* <FiltersContext.Provider value={{
+      <FiltersContext.Provider value={{
           isActive: isActive, setIsactive: setIsactive 
         }}>
         <Filters/>
         <Layout/>
-      </FiltersContext.Provider> */}
+      </FiltersContext.Provider>
     {/* <Movies/> */}
-    <BrowserRouter>
+    {/* <BrowserRouter>
       <Routes>
             <Route path='/sign-in' element = {<SignIn/>}/>
             <Route path='/sign-up' element = {<SignUp/>}/>
       </Routes>
-    </BrowserRouter>
+    </BrowserRouter> */}
     </>
   )
 }
