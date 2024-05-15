@@ -17,7 +17,7 @@ export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (_,{reject
  
 })
 
-const todosSlice =createSlice({
+const moviesSlice =createSlice({
     name:'movies',
     initialState:{
         movies:[],
@@ -31,4 +31,5 @@ const todosSlice =createSlice({
     }
 })
 
-export const {addMovies}=todosSlice.actions
+export const {addMovies}=moviesSlice.actions
+export default moviesSlice.reducer
