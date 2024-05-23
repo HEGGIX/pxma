@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import "./moviesItem.scss"
+import { useDispatch } from "react-redux";
+import { fetchMovies } from "../../store/moviesSlice";
+import { IMoviesItem } from "../../types/types";
 
-export const Movies = () => {
+export const MoviesItem = ({poster, title} : IMoviesItem) => {
+    const dispatch = useDispatch();
     useEffect(() => {
-        fetch("https://www.omdbapi.com/?i=tt3896198&apikey=b5364880")
-            .then((response) => response.json())
-            .then((json) => localStorage.setItem("movies",JSON.stringify(json)))
+        dispatch(fetchMovies())
     },[])
-    const moviesArr = JSON.parse(localStorage.getItem("movies"));
-    console.log(moviesArr)
     return(
         <>
             <div className = "movies-container">
-                <img className = "movies-poster" src={moviesArr.Poster} alt="#"/>
-                <h2 className = "movies-name">{moviesArr.Title}</h2>
-                <p className = "movies-genre">{moviesArr.Genre}</p>
+                <img className = "movies-poster" src={poster} alt="#"/>
+                <h2 className = "movies-name">{title}</h2>
             </div>
         </>
     )

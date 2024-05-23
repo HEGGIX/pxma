@@ -4,7 +4,7 @@ import { inputData } from "../../ui-components/input/data-input"
 import { useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
 import { createUser } from "../../store/userSlice"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import logo from "./pixema.png"
 
 import "./sign-up.scss"
@@ -12,10 +12,16 @@ import "./sign-up.scss"
 
 
 export const SignUp = () => {
+    const [userInfo, setUserInfo] = useState({
+        userName: "",
+        email:"",
+        password:"",
+        courseGroup: 7
+    })
     const navigate = useNavigate()
     const dispatch = useDispatch();
     useEffect(() => {
-        dispatch(createUser)
+        dispatch(createUser(userInfo))
     })
     return(
         <>

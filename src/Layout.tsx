@@ -4,6 +4,8 @@ import { Footer } from "./components/footer/footer"
 import { FiltersContext } from "./context/context"
 import { useContext } from "react"
 import "./Layout.scss"
+import { Movies } from "./components/movies/movies"
+
 
 export const Layout = () =>{
     const context = useContext(FiltersContext)
