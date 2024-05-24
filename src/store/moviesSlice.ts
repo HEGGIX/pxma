@@ -11,8 +11,8 @@ export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (_,{reject
             const movies = await res.json();
             movies.Search.forEach((movie) => moviesList.push(movie));
             page++;
-            // dispatch(addMovies(movies))
           }
+        console.log(moviesList)
         return moviesList
     } catch (error) {
         return rejectWithValue((error as Error).message)
@@ -31,7 +31,23 @@ const moviesSlice =createSlice({
         addMovies(state,action){
             state.movies.push(action.payload)
         }
-    }
+    },
+    extraReducers: builder => {
+        builder
+          .addCase(fetchMovies.pending, (state) => {
+            state.status = 'loading'
+            state.error=null
+          })
+          .addCase(fetchMovies.fulfilled,(state,action)=>{
+            state.status="fulfilled"
+            state.error=null
+            state.movies=action.payload
+          })
+          .addCase(fetchMovies.rejected,(state,action)=>{
+            state.status='rejected'
+            state.error =(action.payload as string)
+          })
+      }
 })
 
 export const {addMovies}=moviesSlice.actions

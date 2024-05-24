@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { fetchMovies } from "../../store/moviesSlice";
+import moviesSlice, { addMovies, fetchMovies } from "../../store/moviesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { IMoviesItem } from "../../types/types";
 import { MoviesItem } from "../moviesItem/moviesItem";
@@ -7,8 +7,8 @@ import { MoviesItem } from "../moviesItem/moviesItem";
 export const Movies = () => {
     const dispatch  = useDispatch();
     useEffect(() => {
-        dispatch(fetchMovies());
-      }, []);
+      dispatch(fetchMovies());
+    }, []);
     const movies = useSelector(state=>(state as {movies:{movies:IMoviesItem[]}}).movies.movies)
     console.log(movies)
     return(
