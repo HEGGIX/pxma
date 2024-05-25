@@ -1,6 +1,6 @@
-import { Input } from "../../../ui-components/input/input"
-import { Button } from "../../../ui-components/button/button"
-import { inputData } from "../../../ui-components/input/data-input"
+import { Input } from "../../ui-components/input/input"
+import { Button } from "../../ui-components/button/button"
+import { inputData } from "../../ui-components/input/data-input"
 import { useNavigate } from "react-router-dom"
 import logo from "./pixema.png"
 

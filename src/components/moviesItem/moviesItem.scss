@@ -1,9 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
 .movies-container{
     width: 14.72%;
+    display: inline-block;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s all;
+    }
+    &:hover .movies-name{
+        color: #7B61FF;
+    }
+
+    &:hover .movies-poster{
+        border: 1px solid #7B61FF;
+        border-radius: 20px;
+    }
 }
 
 .movies-poster{
     width: 100%;
+    height: 300px;
+    display: inline-block;
     border-radius: 20px;
 }
 
@@ -14,9 +35,10 @@
     font-weight: 700;
     line-height: 24px;
     margin-top: 25px;
+    display: inline-block;
 }
 
-.movies-genre{
+.movies-type{
     color: #AFB2B6;
     font-family: "Exo 2", sans-serif;
     font-size: 16px;

@@ -9,7 +9,7 @@ export const Tabs = () => {
         <>
         <div className = "tabs">
             <div className = "tabs-wrapper">
-                <div className = "tabs-container">
+                <div className = "tabs-container home" onClick={() => {}}>
                     <Home className = "tabs-logo"/>
                     <span className = "tabs-text">Home</span>
                 </div>

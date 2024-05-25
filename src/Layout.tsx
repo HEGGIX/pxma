@@ -2,9 +2,10 @@ import { Header } from "./components/header/header"
 import { Tabs } from "./ui-components/tabs/tabs"
 import { Footer } from "./components/footer/footer"
 import { FiltersContext } from "./context/context"
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import "./Layout.scss"
 import { Movies } from "./components/movies/movies"
+import { Filters } from "./components/filters/filters"
 
 
 export const Layout = () =>{
@@ -13,7 +14,7 @@ export const Layout = () =>{
         <>
             <div className={context.isActive ? "layout active" : "layout"}>
                 <Header/>
-                <Tabs/>
+                {/* <Tabs/> */}
             </div>
             {/* <Footer/> */}
         </>

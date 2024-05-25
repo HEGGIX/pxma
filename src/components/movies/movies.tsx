@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import moviesSlice, { addMovies, fetchMovies } from "../../store/moviesSlice";
+import {fetchMovies } from "../../store/moviesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { IMoviesItem } from "../../types/types";
 import { MoviesItem } from "../moviesItem/moviesItem";
+import "./movies.scss"
 
 export const Movies = () => {
     const dispatch  = useDispatch();
@@ -12,6 +13,6 @@ export const Movies = () => {
     const movies = useSelector(state=>(state as {movies:{movies:IMoviesItem[]}}).movies.movies)
     console.log(movies)
     return(
-      <div>{movies.map((movie:IMoviesItem)=><MoviesItem key={movie.imdbID} {...movie}/>)}</div>
+      <div className="movies">{movies.map((movie:IMoviesItem)=><MoviesItem key={movie.imdbID} {...movie}/>)}</div>
     )
 }
