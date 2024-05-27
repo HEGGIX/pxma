@@ -3,5 +3,16 @@ export interface IMoviesItem{
     Title: string,
     Type: string,
     Year: string,
-    imdbID: string 
+    imdbID: string,
+    Actors: string,
+    Released: string,
+    BoxOffice: string,
+    Country: string,
+    Production: string,
+    Director: string,
+    Writer: string
+    Genre: string,
+    imdbRating: string,
+    Runtime: string,
+    Plot: string
 }

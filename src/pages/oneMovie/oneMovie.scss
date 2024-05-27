@@ -1,0 +1,57 @@
+.oneMovie{
+    width: 82.77%;
+    display: flex;
+    margin-top: 55px;
+}
+
+.oneMovie__poster-container{
+    width: 17.8%;
+    margin-left: 175px;
+}
+
+.oneMovie-poster{
+    width: 100%;
+    border: 1px solid inherit;
+    border-radius: 20px;
+}
+
+.oneMovie-btn{
+    width: 49%;
+    height: 55px;
+    background-color: #323537;
+    border: none;
+    outline: none;
+    &.left{
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        border-right: 1px solid black;
+    }
+    &.right{
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-left: 1px solid black;
+    }
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s all;
+        background: #7B61FF;
+        path{
+            fill: black;
+            transition: 0.4s;
+           }
+    }
+}
+
+.oneMovie__desc-container{
+    width: 55%;
+    margin-left: 40px;
+}
+
+.oneMovie__desc-text{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
