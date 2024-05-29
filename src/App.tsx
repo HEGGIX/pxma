@@ -9,7 +9,7 @@ import { SignUp } from './pages/sign-up/sign-up';
 import { UserContext } from './context/context';
 import { Confirmation } from './pages/confirmation/confirmation';
 import { Home } from './pages/home/home';
-import { Favorites } from './pages/favorites';
+import { Favorites } from './pages/favorites/favorites';
 import { OneMovie } from './pages/oneMovie/oneMovie';
 
 
@@ -20,8 +20,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="movie" element={<OneMovie/>}/>
         <Route path="movie/:imdbID" element={<OneMovie/>} />
+        <Route path = "favorites" element = {<Favorites/>}/>
       </Routes>
     </BrowserRouter>
     {/* <Movies/> */}

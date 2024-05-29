@@ -12,12 +12,26 @@ export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (_,{reject
             movies.Search.forEach((movie) => moviesList.push(movie));
             page++;
           }
-        console.log(moviesList)
         return moviesList
     } catch (error) {
         return rejectWithValue((error as Error).message)
     }
- 
+})
+
+export const fetchOneMovie = createAsyncThunk('todos/fetchTodos', async (_,{rejectWithValue})=> {
+  try {
+      const responce = await fetch(`https://www.omdbapi.com/?apikey=b5364880&i=${imdbID}`)
+  
+
+      if(!responce.ok){
+          throw new Error('Error is here  ):')
+      }
+      const data = await responce.json()
+      return data
+  } catch (error) {
+      return rejectWithValue((error as Error).message)
+  }
+
 })
 
 const moviesSlice =createSlice({
@@ -44,6 +58,19 @@ const moviesSlice =createSlice({
             state.movies=action.payload
           })
           .addCase(fetchMovies.rejected,(state,action)=>{
+            state.status='rejected'
+            state.error =(action.payload as string)
+          })
+          .addCase(fetchOneMovie.pending, (state) => {
+            state.status = 'loading'
+            state.error=null
+          })
+          .addCase(fetchOneMovie.fulfilled,(state,action)=>{
+            state.status="fulfilled"
+            state.error=null
+            state.movies=action.payload
+          })
+          .addCase(fetchOneMovie.rejected,(state,action)=>{
             state.status='rejected'
             state.error =(action.payload as string)
           })

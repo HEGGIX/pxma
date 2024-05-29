@@ -15,12 +15,22 @@
     border-radius: 20px;
 }
 
+.oneMovie__btn-container{
+    display: flex;
+    margin-top: 30px;
+}
+
 .oneMovie-btn{
     width: 49%;
     height: 55px;
     background-color: #323537;
     border: none;
     outline: none;
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s all;
+        background: #644fcf;
+    }
     &.left{
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
@@ -31,20 +41,100 @@
         border-bottom-right-radius: 10px;
         border-left: 1px solid black;
     }
-    &:hover{
-        cursor: pointer;
-        transition: 0.4s all;
-        background: #7B61FF;
-        path{
-            fill: black;
-            transition: 0.4s;
-           }
-    }
 }
 
 .oneMovie__desc-container{
     width: 55%;
     margin-left: 40px;
+}
+
+.oneMovie__desc-genre{
+    color: #AFB2B6;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.oneMovie__desc-title{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+.oneMovie__desc-subtitle{
+    width: 26.2%;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.oneMovie__desc-rating__container {
+    width: 16.6%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid inherit;
+    border-radius: 6px;
+    &.good{
+        background: #00A340;
+    }
+    &.normal{
+        background: orangered;
+    }
+}
+
+.oneMovie__desc-rating{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.oneMovie__desc-imdbRating__container{
+    width: 34%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #323537;
+    border: 1px solid inherit;
+    border-radius: 6px;
+}
+
+.oneMovie__desc-imdbRating{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin-left: 10px;
+}
+
+.oneMovie__desc-time__container{
+    width: 34%;
+    height: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #323537;
+    border: 1px solid inherit;
+    border-radius: 6px;
+}
+
+.oneMovie__desc-time{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
 }
 
 .oneMovie__desc-text{

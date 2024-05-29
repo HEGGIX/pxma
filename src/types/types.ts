@@ -16,3 +16,4 @@ export interface IMoviesItem{
     Runtime: string,
     Plot: string
 }
+
