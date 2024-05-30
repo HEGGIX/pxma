@@ -5,10 +5,17 @@
 .favorites-container{
     width: 100%;
     display: flex;
+    justify-content: space-between;
     margin-top: 55px;
 }
 
-.movies-container{
+.favorites-movie__wrapper{
+    width: 82.78%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.favorites-movies__container{
     width: 14.72%;
     display: inline-block;
     margin-bottom: 20px;
