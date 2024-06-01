@@ -66,12 +66,36 @@
 .filters-btn__container{
     width: 84.47%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 0 auto;
-    &:first-child{
-        width: 45%;
+}
+
+.filters-btn{
+    width: 43%;
+    height: 55px;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    &.gray{
+        background: #323537;
+        &:hover{
+            background: #7B61FF;
+            color: #323537;
+        }
     }
-    &:last-child{
-        width: 65%;
+    &.purple{
+        background: #7B61FF;
+        &:hover{
+            background: #323537;
+            color: #7B61FF;
+        }
+    }
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s all;
     }
 }

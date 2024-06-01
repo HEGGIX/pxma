@@ -9,6 +9,7 @@ import { Tabs } from "../../ui-components/tabs/tabs";
 import "./oneMovie.scss"
 import { MoveDescription } from "../../ui-components/moveDescription/moveDescription";
 import { addFavoriteMovies } from "../../store/favoritesSlice";
+import { fetchOneMovie } from "../../store/moviesSlice";
 
 
 export const OneMovie = () => {

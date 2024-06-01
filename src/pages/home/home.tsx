@@ -6,24 +6,20 @@ import { FiltersContext } from "../../context/context";
 import "./home.scss"
 import "../../Layout.scss"
 import { Tabs } from "../../ui-components/tabs/tabs";
+import { Header } from "../../components/header/header";
 
 export const Home = () => {
-    const [isActive, setIsactive] = useState(false);
     const context = useContext(FiltersContext)
     return(
         <>
-        <FiltersContext.Provider value={{
-          isActive: isActive, setIsactive: setIsactive 
-        }}>
             <div className={context.isActive ? "layout active" : "layout"}>
-                <Layout/>
+                <Header/>
                 <div className="home-content">
                     <Tabs/>
                     <Movies/>
                 </div>
             </div>
             <Filters/>
-        </FiltersContext.Provider>
         </>
     )
 }

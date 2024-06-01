@@ -9,9 +9,8 @@ export const Movies = () => {
     const dispatch  = useDispatch();
     useEffect(() => {
       dispatch(fetchMovies());
-    }, []);
+    },[]);
     const movies = useSelector(state=>(state as {movies:{movies:IMoviesItem[]}}).movies.movies)
-    console.log(movies)
     return(
       <div className="movies">{movies.map((movie:IMoviesItem)=><MoviesItem key={movie.imdbID} {...movie}/>)}</div>
     )

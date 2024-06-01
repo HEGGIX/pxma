@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { IMoviesItem } from "../types/types";
 
 
 export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (_,{rejectWithValue})=> {
@@ -38,12 +39,18 @@ const moviesSlice =createSlice({
     name:'movies',
     initialState:{
         movies:[],
+        searchMovie: "",
+        searchMovieArr:[],
         status:null as null|'loading'|'fulfilled'|'rejected',
         error:null as null |string
     },
     reducers:{
         addMovies(state,action){
             state.movies.push(action.payload)
+        },
+        setSearchMovies(state,action:{payload: {Title:IMoviesItem},type: string;}){
+            state.searchMovieArr = state.movies.filter((movie) => movie.Title.toLowerCase().includes(state.searchMovie.toLowerCase()))
+            console.log(state.movies)
         }
     },
     extraReducers: builder => {
@@ -77,5 +84,5 @@ const moviesSlice =createSlice({
       }
 })
 
-export const {addMovies}=moviesSlice.actions
+export const {addMovies,setSearchMovies}=moviesSlice.actions
 export default moviesSlice.reducer

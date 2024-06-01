@@ -15,15 +15,20 @@ import { OneMovie } from './pages/oneMovie/oneMovie';
 
 
 function App() {
+  const [isActive, setIsactive] = useState(false);
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route index element={<Home />} />
-        <Route path="movie/:imdbID" element={<OneMovie/>} />
-        <Route path = "favorites" element = {<Favorites/>}/>
-      </Routes>
-    </BrowserRouter>
+    <FiltersContext.Provider value={{
+          isActive: isActive, setIsactive: setIsactive 
+        }}>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/:imdbID" element={<OneMovie/>} />
+          <Route path = "favorites" element = {<Favorites/>}/>
+        </Routes>
+      </BrowserRouter>
+    </FiltersContext.Provider>
     {/* <Movies/> */}
     {/* <BrowserRouter>
       <Routes>

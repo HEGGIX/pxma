@@ -4,3 +4,13 @@
     justify-content: space-between;
     margin-top: 55px;
 }
+
+.layout.active{
+    opacity: 0.3;
+    transition: all 0.8s;
+    overflow: hidden;
+}
+
+.layout{
+    transition: all 0.8s;
+}

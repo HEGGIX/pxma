@@ -4,7 +4,6 @@ import { Footer } from "./components/footer/footer"
 import { FiltersContext } from "./context/context"
 import { useContext, useState } from "react"
 import "./Layout.scss"
-import { Movies } from "./components/movies/movies"
 import { Filters } from "./components/filters/filters"
 
 

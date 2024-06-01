@@ -3,9 +3,10 @@ import { ReactComponent as Close } from "../../assets/close.svg";
 import { Sort } from "../../ui-components/sort/sort";
 import { MovieName } from "../../ui-components/movieName/movieName";
 import { SortInput } from "../../ui-components/sortInput/sortInput";
-import { Button } from "../../ui-components/button/button";
 import { FiltersContext } from "../../context/context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchMovies } from "../../store/moviesSlice";
 
 export const Filters = () => {
     const context = useContext(FiltersContext)
@@ -22,13 +23,14 @@ export const Filters = () => {
                     <div className="genre-container">
                         <form>
                             <h3 className="genre-title">Genre</h3>
+                            
                         </form>
                     </div>
                     <SortInput placeholderFrom="from" placeholderTo="to" title = "Years"/>
                     <SortInput placeholderFrom="from" placeholderTo="to" title = "Ratings"/>
                     <div className="filters-btn__container">
-                        <Button text="Clear filter"/>
-                        <Button text="Show results"/>
+                        <button className="filters-btn gray">Clear filter</button>
+                        <button className="filters-btn purple">Show results</button>
                     </div>
                 </div>
             </div>

@@ -12,9 +12,11 @@ const favoritesSlice = createSlice({
             type: string;
         }){
            state.favoriteMovies.push(action.payload.oneMovie)
+        },
+        removeFavoriteMovies(state:{favoriteMovies:IMoviesItem[]},action:{payload: {imdbID:string}}){
+            state.favoriteMovies = state.favoriteMovies.filter((movie) => movie.imdbID !== action.payload.imdbID )
         }
-        
     }
 })
-export const {addFavoriteMovies}=favoritesSlice.actions
+export const {addFavoriteMovies,removeFavoriteMovies}=favoritesSlice.actions
 export default favoritesSlice.reducer
