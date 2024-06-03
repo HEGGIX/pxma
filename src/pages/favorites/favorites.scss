@@ -67,6 +67,18 @@
     }
 }
 
+.favorites-remove__btn.white{
+    background: white;
+    border: 1px solid black;
+    color: black;
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s all;
+        background: #7B61FF;
+        color: white;
+    }
+}
+
 .empty-favorites__container{
     width: 100%;
     display: flex;

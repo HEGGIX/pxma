@@ -1,4 +1,4 @@
-import { useState,useEffect } from "react"
+import { useState,useEffect, useContext } from "react"
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom"
 import {ReactComponent as Share} from "../../assets/movie-share.svg"
@@ -10,6 +10,7 @@ import "./oneMovie.scss"
 import { MoveDescription } from "../../ui-components/moveDescription/moveDescription";
 import { addFavoriteMovies } from "../../store/favoritesSlice";
 import { fetchOneMovie } from "../../store/moviesSlice";
+import { ThemeContext } from "../../context/context";
 
 
 export const OneMovie = () => {
@@ -25,6 +26,7 @@ export const OneMovie = () => {
     })
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const themeContext = useContext(ThemeContext)
     useEffect(() => {
         fetch(`https://www.omdbapi.com/?apikey=b5364880&i=${imdbID}`)
           .then((responce) => responce.json())
@@ -39,13 +41,13 @@ export const OneMovie = () => {
             <div className = "oneMovie__poster-container">
                 <img className = "oneMovie-poster" src={Poster} alt="movie" />
                 <div className = "oneMovie__btn-container">
-                    <button className = "oneMovie-btn left" onClick = {() => dispatch(addFavoriteMovies({oneMovie}))}><Favorites/></button>
-                    <button className = "oneMovie-btn right"><Share/></button>
+                    <button className = {themeContext.themeIsActive === false ? "oneMovie-btn left" : "oneMovie-btn left white"} onClick = {() => dispatch(addFavoriteMovies({oneMovie}))}><Favorites/></button>
+                    <button className = {themeContext.themeIsActive === false ? "oneMovie-btn right" : "oneMovie-btn right white"}><Share/></button>
                 </div>
             </div>
             <div className = "oneMovie__desc-container">
                 <span className = "oneMovie__desc-genre">{Genre}</span>
-                <h2 className = "oneMovie__desc-title">{Title}</h2>
+                <h2 className = {themeContext.themeIsActive === false ? "oneMovie__desc-title" : "oneMovie__desc-title white"}>{Title}</h2>
                 <div className = "oneMovie__desc-subtitle">
                     <div className = {imdbRating > 7 ? "oneMovie__desc-rating__container good": "oneMovie__desc-rating__container normal"}>
                         <span className = "oneMovie__desc-rating">{imdbRating}</span>
@@ -58,7 +60,7 @@ export const OneMovie = () => {
                         <span className = "oneMovie__desc-time">{Runtime}</span>
                     </div>
                 </div>
-                <p className = "oneMovie__desc-text">{Plot}</p>
+                <p className = {themeContext.themeIsActive === false ? "oneMovie__desc-text" : "oneMovie__desc-text white"}>{Plot}</p>
                 <MoveDescription/>
             </div>
         </div>

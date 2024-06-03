@@ -33,7 +33,27 @@
     }
 }
 
-.serarch-btn{
+.search.white{
+    background: white;
+}
+
+.search-btn.white{
+    position: absolute;
+    right: 430px;
+    top: 60px;
+    background: #FFFFFF;
+    outline: none;
+    border: none;
+    &:hover{
+        cursor: pointer;
+        path{
+            fill: #7B61FF;
+            transition: 0.3s;
+           }
+    }
+}
+
+.search-btn{
     position: absolute;
     right: 430px;
     top: 60px;

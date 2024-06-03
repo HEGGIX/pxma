@@ -30,5 +30,10 @@ export const inputData:inputText = [
         title: "Full or short movie name",
         type: "text",
         placeholder: "Your text"
+    },
+    {
+        title: "New password",
+        type: "password",
+        placeholder: "New password"
     }
 ]

@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom"
-import { useState,useEffect } from "react"
+import { useState,useEffect, useContext } from "react"
 import "./moveDescription.scss"
+import { ThemeContext } from "../../context/context";
 
 export const MoveDescription = () => {
     const{imdbID}=useParams();
+    const themeContext = useContext(ThemeContext)
     const [movieDesc, setMovieDesc] = useState({
         Year:"",
         Actors: "",
@@ -34,14 +36,14 @@ export const MoveDescription = () => {
                 <span className = "movie-desc__title">Writer</span>
             </div>
             <div className = "movie-desc__col">
-                <span className = "movie-desc__text">{Year}</span>
-                <span className = "movie-desc__text">{Released}</span>
-                <span className = "movie-desc__text">{BoxOffice}</span>
-                <span className = "movie-desc__text">{Country}</span>
-                <span className = "movie-desc__text">{Production}</span>
-                <span className = "movie-desc__text">{Actors}</span>
-                <span className = "movie-desc__text">{Director}</span>
-                <span className = "movie-desc__text">{Writer}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Year}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Released}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{BoxOffice}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Country}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Production}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Actors}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Director}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Writer}</span>
             </div>
         </div>
         </>

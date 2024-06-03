@@ -3,13 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { Layout } from "../../Layout";
 import { IMoviesItem } from "../../types/types";
 import "./favorites.scss"
+import "../../components/moviesItem/moviesItem.scss"
 import { Tabs } from "../../ui-components/tabs/tabs";
 import { ReactComponent as Empty } from "../../assets/empty.svg";
 import { removeFavoriteMovies } from "../../store/favoritesSlice";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/context";
 
 export const Favorites = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const themeContext = useContext(ThemeContext)
     const {favoriteMovies} =  useSelector(state=>state as {favorites:{favoriteMovies:IMoviesItem[]}}).favorites
     localStorage.setItem("movie", JSON.stringify(favoriteMovies))
     const favoriteMoviesStorage = JSON.parse(localStorage.getItem('movie'));
@@ -19,10 +23,10 @@ export const Favorites = () => {
             <div className="favorites-movies__container-wrapper">
                 <div className = "favorites-movies__container" onClick={()=>navigate(`/${imdbID}`)}>
                     <img className = "movies-poster" src={Poster} alt="#"/>
-                    <h2 className = "movies-name">{Title}</h2>
+                    <h2 className = {themeContext.themeIsActive === false ? "movies-name" : "movies-name white"}>{Title}</h2>
                     <p className="movies-type">{Type.charAt(0).toUpperCase() + Type.slice(1)}</p>
                 </div>
-                <button className="favorites-remove__btn" onClick={() => {dispatch(removeFavoriteMovies({imdbID}))}}>Remove</button>
+                <button className= {themeContext.themeIsActive === false ? "favorites-remove__btn" : "favorites-remove__btn white"}onClick={() => {dispatch(removeFavoriteMovies({imdbID}))}}>Remove</button>
             </div>
             </>
         )

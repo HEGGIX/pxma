@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import {fetchMovies } from "../../store/moviesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { IMoviesItem } from "../../types/types";
 import { MoviesItem } from "../moviesItem/moviesItem";
 import "./movies.scss"
+import { ThemeContext } from "../../context/context";
 
 export const Movies = () => {
     const dispatch  = useDispatch();

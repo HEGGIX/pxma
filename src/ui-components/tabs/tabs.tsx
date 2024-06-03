@@ -29,8 +29,10 @@ export const Tabs = () => {
                     </Link>
                 </div>
                 <div className = "tabs-container">
-                    <Settings className = "tabs-logo"/>
-                    <span className = "tabs-text">Settings</span>
+                    <Link to = "/settings" className = "tabs-link">
+                        <Settings className = "tabs-logo"/>
+                        <span className = "tabs-text">Settings</span>
+                    </Link>
                 </div>
             </div>
         </div>

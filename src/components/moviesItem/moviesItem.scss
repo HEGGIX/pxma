@@ -24,11 +24,20 @@
         height: 300px;
         border-radius: 20px;
     }
-    
 }
 
 .movies-name{
     color: #FFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+.movies-name.white{
+    color: black;
     font-family: "Exo 2", sans-serif;
     font-size: 16px;
     font-weight: 700;

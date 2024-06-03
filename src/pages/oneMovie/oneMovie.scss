@@ -43,6 +43,27 @@
     }
 }
 
+.oneMovie-btn.left.white{
+    background: white;
+    border: 2px solid black;
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s all;
+        background: #644fcf;
+    }
+}
+
+.oneMovie-btn.right.white{
+    background: white;
+    border: 2px solid black;
+    border-left: 0;
+    &:hover{
+        cursor: pointer;
+        transition: 0.4s all;
+        background: #644fcf;
+    }
+}
+
 .oneMovie__desc-container{
     width: 55%;
     margin-left: 40px;
@@ -58,6 +79,14 @@
 
 .oneMovie__desc-title{
     color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+.oneMovie__desc-title.white{
+    color: black;
     font-family: "Exo 2", sans-serif;
     font-size: 40px;
     font-weight: 600;
@@ -139,6 +168,15 @@
 
 .oneMovie__desc-text{
     color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 40px;
+}
+
+.oneMovie__desc-text.white{
+    color: black;
     font-family: "Exo 2", sans-serif;
     font-size: 16px;
     font-weight: 500;
