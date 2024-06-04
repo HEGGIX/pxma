@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
-import { Layout } from './Layout'
-import { Filters } from './components/filters/filters'
 import { FiltersContext, ThemeContext } from './context/context'
 import { useEffect, useState } from "react";
 import { SignIn } from './pages/sign-in/sign-in';
@@ -12,6 +10,7 @@ import { Home } from './pages/home/home';
 import { Favorites } from './pages/favorites/favorites';
 import { OneMovie } from './pages/oneMovie/oneMovie';
 import { Settings } from './pages/settings/settings';
+import { Trends } from './pages/trends/trends';
 
 
 
@@ -37,13 +36,13 @@ function App() {
             <Routes>
               <Route index element={<Home />} />
               <Route path="/:imdbID" element={<OneMovie/>} />
+              <Route path = "trends" element = {<Trends/>}/>
               <Route path = "favorites" element = {<Favorites/>}/>
               <Route path = "settings" element = {<Settings/>}/>
             </Routes>
           </BrowserRouter>
         </ThemeContext.Provider>
       </FiltersContext.Provider>
-    {/* <Movies/> */}
     {/* <BrowserRouter>
       <Routes>
             <Route path='/sign-in' element = {<SignIn/>}/>

@@ -36,14 +36,14 @@ export const MoveDescription = () => {
                 <span className = "movie-desc__title">Writer</span>
             </div>
             <div className = "movie-desc__col">
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Year}</span>
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Released}</span>
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{BoxOffice}</span>
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Country}</span>
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Production}</span>
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Actors}</span>
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Director}</span>
-                <span className = {themeContext.themeIsActive === false ? "movie-decs__text" : "movie-decs__text white"}>{Writer}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{Year}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{Released}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{BoxOffice}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{Country}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{Production}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{Actors}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{Director}</span>
+                <span className = {themeContext.themeIsActive === false ? "movie-desc__text" : "movie-desc__text white"}>{Writer}</span>
             </div>
         </div>
         </>

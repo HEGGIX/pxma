@@ -10,7 +10,6 @@ import { Header } from "../../components/header/header";
 
 export const Home = () => {
     const context = useContext(FiltersContext)
-    const themeContext = useContext(ThemeContext)
     return(
         <>
             <div className={context.isActive ? "layout active" : "layout"}>
@@ -20,7 +19,7 @@ export const Home = () => {
                         <Movies/>
                     </div>
                 </div>
-                <Filters/>
+            <Filters/>
         </>
     )
 }
