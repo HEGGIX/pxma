@@ -3,11 +3,19 @@ import { Button } from "../../ui-components/button/button"
 import { inputData } from "../../ui-components/input/data-input"
 import { useNavigate } from "react-router-dom"
 import logo from "./pixema.png"
+import { useDispatch } from "react-redux"
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 import "./sign-in.scss"
 
+
 export const SignIn = () =>{
     const navigate = useNavigate()
+    const dispatch = useDispatch();
+    const handleSignIn = (email, password) => {
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+    }
     return(
         <div className="sign-in">
             <img src={logo} className="logo"/>

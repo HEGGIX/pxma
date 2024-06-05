@@ -18,11 +18,11 @@ export const Trends = () => {
     const trendsMovies = useSelector(state => state.trends.trendsMovies)
     return(
         <>
-        <Header/>
-        <div className = "trends">
-            <Tabs/>
-            <div className="movies">{trendsMovies.map((movie:IMoviesItem)=><MoviesItem key={movie.imdbID} {...movie}/>)}</div>
-        </div>
+            <Header/>
+            <div className = "trends">
+                <Tabs/>
+                <div className="movies">{trendsMovies.map((movie:IMoviesItem)=><MoviesItem key={movie.imdbID} {...movie}/>)}</div>
+            </div>
         </>
     )
 }

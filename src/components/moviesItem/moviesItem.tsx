@@ -12,8 +12,9 @@ export const MoviesItem = ({Poster, Title, Type, imdbID} : IMoviesItem) => {
             <div className = "movies-container" onClick={()=>navigate(`/${imdbID}`)}>
                 <img className = "movies-poster" src={Poster} alt="#"/>
                 <h2 className = {themeContext.themeIsActive === false ? "movies-name" : "movies-name white"}>{Title}</h2>
-                <p className="movies-type">{Type.charAt(0).toUpperCase() + Type.slice(1)}</p>
+                <p className="movies-type"></p>
             </div>
         </>
     )
 }
+// {Type.charAt(0).toUpperCase() + Type.slice(1)}

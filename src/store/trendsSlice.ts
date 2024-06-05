@@ -9,7 +9,6 @@ export const fetchTrendsMovies=createAsyncThunk('movies/fetchMovies', async (_,{
           while (page <= 3) {
             const res = await fetch(`https://www.omdbapi.com/?apikey=b5364880&s=Batman&page=${page}`);
             const movies = await res.json();
-            console.log(movies)
             movies.Search.filter((movie) => {movie.Year > "2015"? trendsMoviesList.push(movie):console.log("no")});
             page++;
           }
@@ -32,8 +31,8 @@ const trendsSlice = createSlice({
             // if(action.payload.oneMovie.Year > "2019"){
             //     state.trendsMovies.push(action.payload.oneMovie)
             // }
-            state.trendsMovies.push(action.payload.oneMovie)
-            console.log(state.trendsMovies)
+            // state.trendsMovies.push(action.payload.oneMovie)
+            // console.log(state.trendsMovies)
         }
     },
     extraReducers: builder => {

@@ -8,7 +8,7 @@ export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (_,{reject
 
         let page = 1;
         while (page <= 3) {
-          const res = await fetch(`https://www.omdbapi.com/?apikey=b5364880&s=Batman&page=${page}`);
+          const res = await fetch(`https://www.omdbapi.com/?apikey=b5364880&s=Batman&page=${page}`);
           const movies = await res.json();
           movies.Search.forEach((movie) => moviesList.push(movie));
           page++;
@@ -39,19 +39,21 @@ const moviesSlice =createSlice({
     name:'movies',
     initialState:{
         movies:[],
-        searchMovie: "",
-        searchMovieArr:[],
+        result:[],
+        searchMovies: "",
         status:null as null|'loading'|'fulfilled'|'rejected',
         error:null as null |string
     },
     reducers:{
-        addMovies(state,action){
-            state.movies.push(action.payload)
-        },
-        setSearchMovies(state,action:{payload: {Title:IMoviesItem},type: string;}){
-            state.searchMovieArr = state.movies.filter((movie) => movie.Title.toLowerCase().includes(state.searchMovie.toLowerCase()))
-            console.log(state.movies)
-        }
+      setSearchMovies(state,action){
+        state.searchMovies = action.payload
+        console.log(action.payload)
+        // state.result.push(state.movies.map((movie) => { movie.Title.includes(action.payload)?state.result.push(movie):state.result.push("нет фильмов")}))
+    },
+      setSearchChange(state,action){
+        console.log(action.payload)
+        state.result.push(state.movies.filter((movie) => movie.Title.includes(state.searchMovies)))
+      }
     },
     extraReducers: builder => {
         builder
@@ -68,21 +70,8 @@ const moviesSlice =createSlice({
             state.status='rejected'
             state.error =(action.payload as string)
           })
-          .addCase(fetchOneMovie.pending, (state) => {
-            state.status = 'loading'
-            state.error=null
-          })
-          .addCase(fetchOneMovie.fulfilled,(state,action)=>{
-            state.status="fulfilled"
-            state.error=null
-            state.movies=action.payload
-          })
-          .addCase(fetchOneMovie.rejected,(state,action)=>{
-            state.status='rejected'
-            state.error =(action.payload as string)
-          })
       }
 })
 
-export const {addMovies,setSearchMovies}=moviesSlice.actions
+export const {setSearchMovies,setSearchChange}=moviesSlice.actions
 export default moviesSlice.reducer

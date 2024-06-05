@@ -39,17 +39,13 @@ function App() {
               <Route path = "trends" element = {<Trends/>}/>
               <Route path = "favorites" element = {<Favorites/>}/>
               <Route path = "settings" element = {<Settings/>}/>
+              <Route path='/sign-in' element = {<SignIn/>}/>
+              <Route path='/sign-up' element = {<SignUp/>}/>
+              <Route path = "/confirmation" element = {<Confirmation/>}/>
             </Routes>
           </BrowserRouter>
         </ThemeContext.Provider>
       </FiltersContext.Provider>
-    {/* <BrowserRouter>
-      <Routes>
-            <Route path='/sign-in' element = {<SignIn/>}/>
-            <Route path='/sign-up' element = {<SignUp/>}/>
-            <Route path = "/confirmation" element = {<Confirmation/>}/>
-      </Routes>
-    </BrowserRouter> */}
     </>
   )
 }
