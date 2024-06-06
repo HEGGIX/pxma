@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { IMoviesItem } from "../types/types";
 
 export const fetchTrendsMovies=createAsyncThunk('movies/fetchMovies', async (_,{rejectWithValue})=> {
     try {
@@ -23,18 +22,7 @@ const trendsSlice = createSlice({
     initialState:{
         trendsMovies:[]
     },
-    reducers:{
-        addTrendsMovies(state:{trendsMovies:IMoviesItem[]},action:{
-            payload: {oneMovie:IMoviesItem};
-            type: string;
-        }){
-            // if(action.payload.oneMovie.Year > "2019"){
-            //     state.trendsMovies.push(action.payload.oneMovie)
-            // }
-            // state.trendsMovies.push(action.payload.oneMovie)
-            // console.log(state.trendsMovies)
-        }
-    },
+    reducers:{},
     extraReducers: builder => {
         builder
           .addCase(fetchTrendsMovies.pending, (state) => {

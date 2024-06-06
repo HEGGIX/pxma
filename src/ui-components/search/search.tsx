@@ -22,7 +22,6 @@ export const Search = () =>{
             <form className="search-container" onSubmit={handleSearchSubmit}>
                 <input type="text" className = {themeContext.themeIsActive === false ? "search" : "search white"} placeholder = "Search" value={searchMovies} onChange={handleSearchChange}/>
                 <button className= {themeContext.themeIsActive === false ? "search-btn" : "search-btn white"} onClick={() => context.setIsactive(!context.isActive)}><SearchImg/></button>
-                <button onClick={()=>{dispatch(setSearchChange())}}>AAAA</button>
             </form>
         </>
     )

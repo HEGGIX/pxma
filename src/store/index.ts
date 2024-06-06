@@ -4,7 +4,6 @@ import moviesSlice from "./moviesSlice"
 import favoritesSlice from './favoritesSlice'
 import trendsSlice from './trendsSlice'
 
-
 export default configureStore({
     reducer:{
         user:userSlice,

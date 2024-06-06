@@ -12,10 +12,6 @@ import "./sign-in.scss"
 export const SignIn = () =>{
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const handleSignIn = (email, password) => {
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
-    }
     return(
         <div className="sign-in">
             <img src={logo} className="logo"/>

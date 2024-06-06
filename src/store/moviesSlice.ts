@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IMoviesItem } from "../types/types";
 
 
-export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (_,{rejectWithValue})=> {
+export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (search,{rejectWithValue})=> {
   try {
        const moviesList = [];
 
@@ -19,7 +19,7 @@ export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (_,{reject
   }
 })
 
-export const fetchOneMovie = createAsyncThunk('todos/fetchTodos', async (_,{rejectWithValue})=> {
+export const fetchOneMovie = createAsyncThunk('todos/fetchTodos', async (imdbID,{rejectWithValue})=> {
   try {
       const responce = await fetch(`https://www.omdbapi.com/?apikey=b5364880&i=${imdbID}`)
   
@@ -39,7 +39,7 @@ const moviesSlice =createSlice({
     name:'movies',
     initialState:{
         movies:[],
-        result:[],
+        result: null,
         searchMovies: "",
         status:null as null|'loading'|'fulfilled'|'rejected',
         error:null as null |string
@@ -51,8 +51,7 @@ const moviesSlice =createSlice({
         // state.result.push(state.movies.map((movie) => { movie.Title.includes(action.payload)?state.result.push(movie):state.result.push("нет фильмов")}))
     },
       setSearchChange(state,action){
-        console.log(action.payload)
-        state.result.push(state.movies.filter((movie) => movie.Title.includes(state.searchMovies)))
+        
       }
     },
     extraReducers: builder => {
@@ -65,6 +64,8 @@ const moviesSlice =createSlice({
             state.status="fulfilled"
             state.error=null
             state.movies=action.payload
+            state.result =  state.movies.map((movie:IMoviesItem)=> movie.Title.includes(state.searchMovies))
+            console.log(state.result)
           })
           .addCase(fetchMovies.rejected,(state,action)=>{
             state.status='rejected'
