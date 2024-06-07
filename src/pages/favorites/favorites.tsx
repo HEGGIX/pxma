@@ -9,6 +9,7 @@ import { ReactComponent as Empty } from "../../assets/empty.svg";
 import { removeFavoriteMovies } from "../../store/favoritesSlice";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/context";
+import debounce from 'debounce';
 
 export const Favorites = () => {
     const navigate = useNavigate()

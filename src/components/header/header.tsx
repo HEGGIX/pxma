@@ -16,7 +16,7 @@ export const Header = () =>{
                     <img src = {themeContext.themeIsActive === false ? logo : whiteLogo}/>
                 </div>
                 <Search/>
-                <Person userName = "Gleb ermakovich"/>
+                <Person userName = ""/>
             </div>
         </header>
         </>

@@ -24,3 +24,25 @@ export interface ISearchMovie{
     Year: string,
     imdbID: string
 }
+
+export interface User{
+    username: string;
+    email: string;
+    password: string;
+    course_group: number;
+}
+
+export interface IAuthContext {
+    isAuth: User;
+    signin: (auth: User, callBack: () => void) => void;
+    signout: (callBack: () => void) => void;
+}
+
+export interface ActivateUser {
+    uid: string;
+    token: string;
+}
+
+export interface IChildren{
+    children:React.ReactNode[]|React.ReactNode
+}

@@ -9,14 +9,13 @@ import { fetchSearchMovies } from "../../store/moviesSearchSlice";
 
 export const Movies = () => {
     const dispatch  = useDispatch();
-    const {searchMovies,movies,result}= useSelector(state=>state.movies)
-    console.log(result)
+    const {searchMovies,movies}= useSelector(state=>state.movies)
     useEffect(() => {
       dispatch(fetchMovies());
     },[searchMovies])
     return(
       <>
-      <div className="movies">{movies.map((movie:IMoviesItem)=> movie.Title.includes(searchMovies)?<MoviesItem key={movie.imdbID} {...movie}/>:console.log("no"))}</div> 
+      <div className="movies">{movies.map((movie:IMoviesItem)=> movie.Title.toLowerCase().includes(searchMovies)?<MoviesItem key={movie.imdbID} {...movie}/>:console.log("no"))}</div> 
       </>
   
     )
