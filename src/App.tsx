@@ -1,17 +1,18 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css'
-import { FiltersContext, ThemeContext } from './context/context'
+import { AuthContext, FiltersContext, ThemeContext } from './context/context'
 import { useEffect, useState } from "react";
 import { SignIn } from './pages/sign-in/sign-in';
 import { SignUp } from './pages/sign-up/sign-up';
-import { UserContext } from './context/context';
 import { Confirmation } from './pages/confirmation/confirmation';
 import { Home } from './pages/home/home';
 import { Favorites } from './pages/favorites/favorites';
 import { OneMovie } from './pages/oneMovie/oneMovie';
 import { Settings } from './pages/settings/settings';
 import { Trends } from './pages/trends/trends';
-
+import { Activation } from './pages/activation/activation';
+import Auth from './hooks/auth';
+import AuthProvider from './hooks/authProvider';
 
 
 function App() {
@@ -32,23 +33,23 @@ function App() {
         <ThemeContext.Provider value = {{
             themeIsActive: themeIsActive, setThemeIsActive: setThemeIsActive
         }}>
-          <BrowserRouter>
-            <Routes>
-              <Route index element={<Home />} />
-              <Route path="/:imdbID" element={<OneMovie/>} />
-              <Route path = "trends" element = {<Trends/>}/>
-              <Route path = "favorites" element = {<Favorites/>}/>
-              <Route path = "settings" element = {<Settings/>}/>
-              <Route path='/sign-in' element = {<SignIn/>}/>
-              <Route path='/sign-up' element = {<SignUp/>}/>
-              <Route path = "/confirmation" element = {<Confirmation/>}/>
+        <AuthProvider>
+        <Routes>
+                <Route index element={<Home />} />
+                <Route path="/:imdbID" element={<Auth><OneMovie/></Auth>} />
+                <Route path = "trends" element = {<Trends/>}/>
+                <Route path = "favorites" element = {<Favorites/>}/>
+                <Route path = "settings" element = {<Settings/>}/>
+                <Route path='/sign-in' element = {<SignIn/>}/>
+                <Route path='/sign-up' element = {<SignUp/>}/>
+                <Route path = "/confirmation" element = {<Confirmation/>}/>
+                <Route path = "/activation/:uid/:token" element = {<Activation/>}/>
             </Routes>
-          </BrowserRouter>
+        </AuthProvider>
         </ThemeContext.Provider>
       </FiltersContext.Provider>
     </>
   )
 }
-
 export default App
 

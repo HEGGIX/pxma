@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux"
 import { useEffect, useState } from "react"
 import { signUpUser } from "../../store/userSlice"
 import { useAuth } from "../../hooks/useAuth"
-
+import { Action, ThunkDispatch } from "@reduxjs/toolkit"
 
 
 export const SignUp = () => {
@@ -16,20 +16,20 @@ export const SignUp = () => {
         document.body.style.removeProperty("background");
     },[])
     const navigate = useNavigate()
-    const dispatch = useDispatch();
-    const [value,setValue]=useState(  {
+    const dispatch = useDispatch<ThunkDispatch<unknown, unknown, Action>>();
+    const [value,setValue]=useState({
         username: "",
         email: "",
         password: "",
         course_group: 7
     })
-    // const {signin}=useAuth()
+    const {signin}=useAuth()
     const location =useLocation()
-    // const fromPage=location.state.from.pathname||'/'
+    const fromPage=location.state.from.pathname||'/'
     const submitHandler =(event:React.ChangeEvent<HTMLFormElement>)=>{
         event?.preventDefault()
         dispatch(signUpUser(value))
-        // signin(value,()=>navigate('/confirmation',{state:{fromPage},replace:true}))
+        signin(value,()=>navigate('/confirmation',{state:{fromPage},replace:true}))
     }
     const inputHandler =(event:React.ChangeEvent<HTMLInputElement>)=>{
         const {name,value}=event.target;
@@ -39,6 +39,7 @@ export const SignUp = () => {
         }
         ))
     }
+    console.log(value)
     return(
         <>
         <div className="sign-up">
@@ -46,10 +47,10 @@ export const SignUp = () => {
             <div className="sign-up__container">
                 <form className="sign-up__wrapper" onSubmit={submitHandler}>
                     <h2 className="sign-up__title">Sign Up</h2>
-                    <Input type={inputData[0].type} placeholder={inputData[0].placeholder} title = {inputData[0].title} value = {value.username} onChange = {inputHandler}/>
-                    <Input type={inputData[1].type} placeholder={inputData[1].placeholder} title = {inputData[1].title} value = {value.email} onChange = {inputHandler}/>
-                    <Input type={inputData[2].type} placeholder={inputData[2].placeholder} title = {inputData[2].title} value = {value.password} onChange = {inputHandler}/>
-                    <Button text={"Sign up"} onClick={() => console.log("hello")}/>
+                    <Input type={inputData[0].type} name = "username" placeholder={inputData[0].placeholder} title = {inputData[0].title} value = {value.username} onChange = {inputHandler}/>
+                    <Input type={inputData[1].type} name = "email" placeholder={inputData[1].placeholder} title = {inputData[1].title} value = {value.email} onChange = {inputHandler}/>
+                    <Input type={inputData[2].type} name = "password" placeholder={inputData[2].placeholder} title = {inputData[2].title} value = {value.password} onChange = {inputHandler}/>
+                    <Button text={"Sign up"} type ={"submit"}/>
                     <p className="sign-up__question">Already have an account?<button className="sign-up__link" onClick={()=>navigate("/sign-in")}> Sign in</button></p>
                 </form>
             </div>

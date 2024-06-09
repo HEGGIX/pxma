@@ -1,0 +1,66 @@
+.exit-tab{
+    width: 25%;
+    height: 140px;
+    background: #242426;
+    border-radius: 15px;
+    display: none;
+    margin-top: 80px;
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+}
+
+.exit-tab.active{
+    display: block;
+}
+
+.exit-tab__wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.exit-tab__title{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.exit-tab__title-btn{
+    align-self: flex-end;
+    background: inherit;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    margin-right: 15px;
+    &:hover{
+        cursor: pointer;
+        path{
+            fill: #7B61FF;
+            transition: 0.3s;
+           }
+    }
+}
+
+.exit-tab__btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.exit-tab__btn{
+    width: 41%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background: #323537;
+    color: #FFFFFF;
+    &:hover{
+        cursor: pointer;
+        background: #7B61FF;
+        transition: 0.4s all;
+    }
+}

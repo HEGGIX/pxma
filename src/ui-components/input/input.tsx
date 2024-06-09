@@ -7,7 +7,7 @@ export const Input = (props) => {
     return(
         <div className="form-input__container">
             <h2 className={themeContext.themeIsActive === false ? "form-input__title" : "form-input__title white"}>{props.title}</h2>
-            <input type={props.type} placeholder={props.placeholder} className= {themeContext.themeIsActive === false ? "form-input" : "form-input white"}/>
+            <input type={props.type} name={props.name} placeholder={props.placeholder} value={props.value} onChange={props.onChange} className= {themeContext.themeIsActive === false ? "form-input" : "form-input white"}/>
         </div>
     )
 }

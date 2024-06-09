@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import { User } from "../types/types.ts";
-import {AuthContext} from "../context/context.ts"
-import { AuthProvider } from "firebase/auth";
+import React, { createContext, useState } from "react";
+import { IAuthContext, User } from "../types/types.ts";
+
+export const AuthContext = createContext<IAuthContext | null>(null);
+
 
 const AuthProvider = ({
   children,
@@ -28,8 +29,8 @@ const signout = (callBack: () => void) => {
       course_group: 7
     });
     callBack();
-};
-  const value = { isAuth, signin, signout };
+}
+const value = { isAuth, signin, signout };
 
   return (
     <AuthContext.Provider value={value}>

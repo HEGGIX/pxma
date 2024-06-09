@@ -1,7 +1,7 @@
 import "./button.scss"
 
-export const Button = ({text,onClick}:{text:string,onClick:void}) => {
+export const Button = ({text,type}:{text:string}) => {
     return(
-        <button className="button" onClick={onClick}>{text}</button>
+        <button className="button" type={type}>{text}</button>
     )
 }
