@@ -9,6 +9,7 @@ import { useEffect, useState } from "react"
 import { signUpUser } from "../../store/userSlice"
 import { useAuth } from "../../hooks/useAuth"
 import { Action, ThunkDispatch } from "@reduxjs/toolkit"
+import AuthProvider from "../../hooks/authProvider"
 
 
 export const SignUp = () => {
@@ -42,6 +43,7 @@ export const SignUp = () => {
     console.log(value)
     return(
         <>
+        <AuthProvider>
         <div className="sign-up">
             <img src={logo} className="logo"/>
             <div className="sign-up__container">
@@ -56,6 +58,7 @@ export const SignUp = () => {
             </div>
             <p className="sign-up__patent">© All Rights Reserved</p>
         </div>
+        </AuthProvider>
         </>
     )
 }

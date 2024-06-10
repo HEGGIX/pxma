@@ -1,9 +1,9 @@
 import "./person.scss"
+import "./personMedia.scss"
 import {ReactComponent as Arrow} from "../../assets/person-arrow.svg"
 import { useContext } from "react"
 import { ExitContext, ThemeContext } from "../../context/context"
 import { useSelector } from "react-redux"
-import { ExitTab } from "../../components/exitTab/exitTab"
 
 export const Person = (props) => {
     const {username} = useSelector((state)=>state.user.user)||{username:'Your Name'}

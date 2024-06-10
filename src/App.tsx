@@ -34,17 +34,17 @@ function App() {
             themeIsActive: themeIsActive, setThemeIsActive: setThemeIsActive
         }}>
         <AuthProvider>
-        <Routes>
-                <Route index element={<Home />} />
-                <Route path="/:imdbID" element={<Auth><OneMovie/></Auth>} />
-                <Route path = "trends" element = {<Trends/>}/>
-                <Route path = "favorites" element = {<Favorites/>}/>
-                <Route path = "settings" element = {<Settings/>}/>
-                <Route path='/sign-in' element = {<SignIn/>}/>
-                <Route path='/sign-up' element = {<SignUp/>}/>
-                <Route path = "/confirmation" element = {<Confirmation/>}/>
-                <Route path = "/activation/:uid/:token" element = {<Activation/>}/>
-            </Routes>
+          <Routes>
+            <Route index element={<Home />} />
+            <Route path="/:imdbID" element={<Auth><OneMovie/></Auth>} />
+            <Route path = "trends" element = {<Trends/>}/>
+            <Route path = "favorites" element = {<Favorites/>}/>
+            <Route path = "settings" element = {<Settings/>}/>
+            <Route path='sign-in' element = {<SignIn/>}/>
+            <Route path='sign-up' element = {<SignUp/>}/>
+            <Route path = "confirmation" element = {<Confirmation/>}/>
+            <Route path = "activation/:uid/:token" element = {<Activation/>}/>
+          </Routes>
         </AuthProvider>
         </ThemeContext.Provider>
       </FiltersContext.Provider>

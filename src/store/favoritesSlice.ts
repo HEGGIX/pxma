@@ -11,8 +11,8 @@ const favoritesSlice = createSlice({
             payload: {oneMovie:IMoviesItem};
             type: string;
         }){
-            console.log(action.payload.oneMovie)
             state.favoriteMovies.push(action.payload.oneMovie)
+            localStorage.setItem("movie",JSON.stringify(state.favoriteMovies))
         },
         removeFavoriteMovies(state:{favoriteMovies:IMoviesItem[]},action:{payload: {imdbID:string}}){
             state.favoriteMovies = state.favoriteMovies.filter((movie) => movie.imdbID !== action.payload.imdbID )

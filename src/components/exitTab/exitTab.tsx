@@ -1,5 +1,6 @@
 import "./exitTab.scss"
-import { useContext, useState } from "react"
+import "./exitTabMedia.scss"
+import { useContext} from "react"
 import { ExitContext } from "../../context/context"
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { useNavigate } from "react-router-dom";

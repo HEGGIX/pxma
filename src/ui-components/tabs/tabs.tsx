@@ -3,13 +3,12 @@ import {ReactComponent as Home} from "../../assets/home.svg"
 import {ReactComponent as Trends} from "../../assets/trends.svg"
 import {ReactComponent as Favorites} from "../../assets/favorites.svg"
 import {ReactComponent as Settings} from "../../assets/settings.svg"
-import { useNavigate,Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import {Link } from "react-router-dom";
+import { useDispatch} from "react-redux";
 import { addTrendsMovies } from "../../store/trendsSlice"
 
 
 export const Tabs = () => {
-    const navigate = useNavigate()
     const dispatch = useDispatch()
     return(
         <>

@@ -1,4 +1,5 @@
 import "./moviesItem.scss"
+import "./moviesItemMedia.scss"
 import { IMoviesItem } from "../../types/types";
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";

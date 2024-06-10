@@ -1,4 +1,5 @@
 import "./header.scss"
+import "./headerMedia.scss"
 import { Search } from "../../ui-components/search/search"
 import { Person } from "../../ui-components/person/person"
 import logo from "./pixema.png"

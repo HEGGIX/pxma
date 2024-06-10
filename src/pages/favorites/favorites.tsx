@@ -9,15 +9,15 @@ import { ReactComponent as Empty } from "../../assets/empty.svg";
 import { removeFavoriteMovies } from "../../store/favoritesSlice";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/context";
-import debounce from 'debounce';
 
 export const Favorites = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
-    const {favoriteMovies} =  useSelector(state=>state as {favorites:{favoriteMovies:IMoviesItem[]}}).favorites
-    localStorage.setItem("movie", JSON.stringify(favoriteMovies))
-    const favoriteMoviesStorage = JSON.parse(localStorage.getItem('movie'));
+    // const {favoriteMovies} =  useSelector(state=>state as {favorites:{favoriteMovies:IMoviesItem[]}}).favorites
+    // // localStorage.setItem("movie", JSON.stringify(favoriteMovies))
+    const favoriteMoviesStorage = JSON.parse(localStorage.getItem("movie"));
+    console.log(favoriteMoviesStorage)
     const favoriteMoviesWrap = favoriteMoviesStorage.map(({Poster, Title, Type, imdbID}:IMoviesItem) => {
         return(
             <>
@@ -35,7 +35,7 @@ export const Favorites = () => {
     return(
         <>
         {
-            favoriteMovies.length === 0 ? 
+            favoriteMoviesStorage.length === 0 ? 
             <>
                 <Layout/>
                 <div className="empty-favorites__container">
