@@ -1,12 +1,13 @@
+import "./oneMovie.scss"
+import "./oneMovieMedia.scss"
 import { useState,useEffect, useContext } from "react"
 import { useDispatch } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import {ReactComponent as Share} from "../../assets/movie-share.svg"
 import {ReactComponent as Favorites} from "../../assets/favorites.svg"
 import {ReactComponent as IMDB} from "../../assets/imdb-logo.svg"
 import {Layout} from "../../Layout"
 import { Tabs } from "../../ui-components/tabs/tabs";
-import "./oneMovie.scss"
 import { MoveDescription } from "../../ui-components/moveDescription/moveDescription";
 import { addFavoriteMovies } from "../../store/favoritesSlice";
 import { fetchOneMovie } from "../../store/moviesSlice";
@@ -24,7 +25,6 @@ export const OneMovie = () => {
         Runtime:  "",
         Plot:  ""
     })
-    const navigate = useNavigate()
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
     useEffect(() => {

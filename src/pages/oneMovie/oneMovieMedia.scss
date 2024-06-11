@@ -1,0 +1,60 @@
+@media (max-width: 1550px){
+    .oneMovie__desc-imdbRating__container{
+        width: 35%;
+    }
+    
+    .oneMovie__desc-time__container{
+        width: 40%;
+    }
+}
+
+@media (max-width: 1350px){
+    .oneMovie__desc-subtitle{
+        width: 36%;
+    }
+
+    .oneMovie__desc-imdbRating__container{
+        margin-left: 15px;
+    }
+
+    .oneMovie__desc-time__container{
+        width: 44%;
+        margin-left: 15px;
+    }
+
+    .oneMovie__poster-container{
+        margin-left: 105px;
+    }
+}
+
+@media (max-width: 1150px){
+    .oneMovie__desc-subtitle{
+        width: 50%;
+    }
+
+    .oneMovie__poster-container{
+        width: 30%;
+        margin-left: 90px;
+    }
+}
+
+@media (max-width: 1050px){
+    .oneMovie__desc-subtitle{
+        width: 60%;
+    }
+}
+
+@media (max-width: 950px){
+    .oneMovie{
+        width: 100%;
+    }
+
+    .oneMovie__desc-subtitle{
+        width: 55%;
+    }
+
+    .oneMovie__poster-container{
+        margin-left: 85px;
+        width: 30%;
+    }
+}

@@ -1,6 +1,7 @@
+import "./moveDescription.scss"
+import "./moveDescriptionMedia.scss"
 import { useParams } from "react-router-dom"
 import { useState,useEffect, useContext } from "react"
-import "./moveDescription.scss"
 import { ThemeContext } from "../../context/context";
 
 export const MoveDescription = () => {

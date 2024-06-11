@@ -4,9 +4,8 @@ import { Sort } from "../../ui-components/sort/sort";
 import { MovieName } from "../../ui-components/movieName/movieName";
 import { SortInput } from "../../ui-components/sortInput/sortInput";
 import { FiltersContext } from "../../context/context";
-import { useContext, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchMovies } from "../../store/moviesSlice";
+import { useContext} from "react";
+import { Genres } from "../genres/genres";
 
 export const Filters = () => {
     const context = useContext(FiltersContext)
@@ -20,10 +19,10 @@ export const Filters = () => {
                     </div>
                     <Sort/>
                     <MovieName/>
-                    <div className="genre-container">
+                    <div className="filters-genre__container">
                         <form>
                             <h3 className="genre-title">Genre</h3>
-                            
+                            <Genres/>
                         </form>
                     </div>
                     <SortInput placeholderFrom="from" placeholderTo="to" title = "Years"/>

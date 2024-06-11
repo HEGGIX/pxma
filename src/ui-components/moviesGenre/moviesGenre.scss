@@ -1,0 +1,29 @@
+.moviesGenre{
+    width: 27.5%;
+    height: 30px;
+    background: #242426;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.moviesGenre-text{
+    color: #FFFFFF;
+    font-family: "Exo 2", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.moviesGenre-btn{
+    background: inherit;
+    outline: none;
+    border: none;
+    &:hover{
+        cursor: pointer;
+        path{
+            fill: #7B61FF;
+            transition: 0.3s;
+           }
+    }
+}
