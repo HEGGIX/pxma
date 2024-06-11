@@ -1,8 +1,12 @@
 import logo from "../sign-up/pixema.png"
 import "./confirmation.scss"
+import { useSelector } from "react-redux"
 import { Button } from "../../ui-components/button/button"
+import { User } from "../../types/types"
 
 export const Confirmation = () => {
+    const data = useSelector(state=>(state as {user:{user:User}}).user.user)
+    console.log('data',data)
     return(
         <>
         <div className="confirmation">

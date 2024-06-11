@@ -1,9 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
+import "./favorites.scss"
+import "./favoritesMedia.scss"
+import "../../components/moviesItem/moviesItem.scss"
+import { useDispatch} from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "../../Layout";
 import { IMoviesItem } from "../../types/types";
-import "./favorites.scss"
-import "../../components/moviesItem/moviesItem.scss"
 import { Tabs } from "../../ui-components/tabs/tabs";
 import { ReactComponent as Empty } from "../../assets/empty.svg";
 import { removeFavoriteMovies } from "../../store/favoritesSlice";
@@ -14,10 +15,7 @@ export const Favorites = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
-    // const {favoriteMovies} =  useSelector(state=>state as {favorites:{favoriteMovies:IMoviesItem[]}}).favorites
-    // // localStorage.setItem("movie", JSON.stringify(favoriteMovies))
     const favoriteMoviesStorage = JSON.parse(localStorage.getItem("movie"));
-    console.log(favoriteMoviesStorage)
     const favoriteMoviesWrap = favoriteMoviesStorage.map(({Poster, Title, Type, imdbID}:IMoviesItem) => {
         return(
             <>

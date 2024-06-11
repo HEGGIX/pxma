@@ -3,3 +3,15 @@
         width: 8%;
     }
 }
+
+@media (max-width: 1450px){
+    .logo-container{
+        width: 9%;
+    }
+}
+
+@media (max-width: 950px){
+    .logo-container{
+       display: none;
+    }
+}

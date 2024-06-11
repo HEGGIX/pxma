@@ -5,7 +5,7 @@ import { Button } from "../../ui-components/button/button"
 import { inputData } from "../../ui-components/input/data-input"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import { useEffect, useState } from "react"
+import React,{ useEffect, useState } from "react"
 import { signUpUser } from "../../store/userSlice"
 import { useAuth } from "../../hooks/useAuth"
 import { Action, ThunkDispatch } from "@reduxjs/toolkit"
@@ -26,11 +26,11 @@ export const SignUp = () => {
     })
     const {signin}=useAuth()
     const location =useLocation()
-    const fromPage=location.state.from.pathname||'/'
+    // const fromPage=location.state.from.pathname||'/'
     const submitHandler =(event:React.ChangeEvent<HTMLFormElement>)=>{
         event?.preventDefault()
         dispatch(signUpUser(value))
-        signin(value,()=>navigate('/confirmation',{state:{fromPage},replace:true}))
+        signin(value,()=>navigate('/confirmation',{state:{from:location},replace:true}))
     }
     const inputHandler =(event:React.ChangeEvent<HTMLInputElement>)=>{
         const {name,value}=event.target;

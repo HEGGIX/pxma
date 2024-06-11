@@ -111,7 +111,7 @@
 
 .settings-btn{
     width: 24.1%;
-    padding: 15px 105px;
+    padding: 15px;
     border: none;
     border-radius: 10px;
     color: #FFFF;
@@ -119,6 +119,7 @@
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
+    text-align: center;
     background: #323537;
     &.gray{
         background: #323537;

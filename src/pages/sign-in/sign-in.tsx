@@ -8,6 +8,7 @@ import "./sign-in.scss"
 import { useState } from "react"
 import { Action, ThunkDispatch } from "@reduxjs/toolkit"
 import { getUser } from "../../store/userSlice"
+// import { getUser } from "../../store/userSlice"
 
 
 export const SignIn = () =>{
@@ -17,7 +18,7 @@ export const SignIn = () =>{
     const formHanlder=(event:React.ChangeEvent<HTMLFormElement>)=>{
         event?.preventDefault()
         dispatch(getUser(userLogin))
-     
+        navigate("/")
     }
     const inputHanlder=(event:React.ChangeEvent<HTMLInputElement>)=>{
         const {value,name}=event.target

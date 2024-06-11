@@ -3,3 +3,9 @@
         justify-content: space-around;
     }
 }
+
+@media (max-width: 850px){
+    .movies{
+        margin-left: 35px;
+    }
+}

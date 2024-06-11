@@ -1,0 +1,41 @@
+@media (max-width: 1650px){
+    .favorites-movies__container-wrapper{
+        width: 17%;
+    }
+}
+
+@media (max-width: 1450px){
+    .favorites-movies__container-wrapper{
+        width: 19%;
+    }
+}
+
+@media (max-width: 1250px){
+    .favorites-movie__wrapper{
+        width: 87.78%;
+    }
+
+    .favorites-movie{
+        justify-content: space-around;
+    }
+
+    .favorites-movies__container-wrapper{
+        width: 22%;
+    }
+}
+
+@media (max-width: 1050px){
+    .favorites-movie{
+       margin-left: 35px;
+    }
+
+    .favorites-movies__container-wrapper{
+        width: 26%;
+    }
+}
+
+@media (max-width: 850px){
+    .favorites-movies__container-wrapper{
+        width: 38%;
+    }
+}

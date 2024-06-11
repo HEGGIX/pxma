@@ -43,7 +43,7 @@ function App() {
             <Route path='sign-in' element = {<SignIn/>}/>
             <Route path='sign-up' element = {<SignUp/>}/>
             <Route path = "confirmation" element = {<Confirmation/>}/>
-            <Route path = "activation/:uid/:token" element = {<Activation/>}/>
+            <Route path = "activate/:uid/:token" element = {<Activation/>}/>
           </Routes>
         </AuthProvider>
         </ThemeContext.Provider>

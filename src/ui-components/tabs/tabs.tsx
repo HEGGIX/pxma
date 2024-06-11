@@ -1,4 +1,5 @@
 import "./tabs.scss"
+import "./tabsMedia.scss"
 import {ReactComponent as Home} from "../../assets/home.svg"
 import {ReactComponent as Trends} from "../../assets/trends.svg"
 import {ReactComponent as Favorites} from "../../assets/favorites.svg"

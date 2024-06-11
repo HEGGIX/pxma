@@ -1,0 +1,50 @@
+@media (max-width: 1350px){
+    .settings-container__color-btn{
+        width: 8%;
+    }
+}
+
+@media (max-width: 1050px){
+    .settings-container{
+        margin-left: 70px;
+    }
+
+    .settings-container__inp-container.password{
+        display: block;
+    }
+}
+
+@media (max-width: 950px){
+    .settings-container{
+        margin-left: 60px;
+    }
+
+    .settings-btn{
+        width: 30%;
+    }
+
+    .settings-container__color-btn{
+        width: 11%;
+    }
+}
+
+@media (max-width: 950px){
+    .settings-container{
+        margin-left: 40px;
+    }
+
+    .settings-btn{
+        width: 30%;
+    }
+
+    .settings-container__color-btn{
+        width: 11%;
+    }
+}
+
+@media (max-width: 850px){
+    .settings-container__inp-container.profile{
+        display: block;
+    }
+}
+
