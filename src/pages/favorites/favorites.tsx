@@ -1,7 +1,7 @@
 import "./favorites.scss"
 import "./favoritesMedia.scss"
 import "../../components/moviesItem/moviesItem.scss"
-import { useDispatch} from "react-redux";
+import { useDispatch,useSelector} from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Layout } from "../../Layout";
 import { IMoviesItem } from "../../types/types";
@@ -11,13 +11,15 @@ import { removeFavoriteMovies } from "../../store/favoritesSlice";
 import { useContext } from "react";
 import { ThemeContext } from "../../context/context";
 
+
 export const Favorites = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
-    const favoriteMoviesStorage = JSON.parse(localStorage.getItem("movie"));
-    console.log(favoriteMoviesStorage)
-    const favoriteMoviesWrap = favoriteMoviesStorage.map(({Poster, Title, Type, imdbID}:IMoviesItem) => {
+    const favoriteMovies = useSelector(state => state.favorites.favoriteMovies);
+    // console.log(favoriteMoviesStorage.map(({Poster, Title, Type, imdbID}:IMoviesItem)))
+    
+    const favoritesMoviesWrapp = favoriteMovies.map(({Poster, Title, Type, imdbID}:IMoviesItem) => {
         return(
             <>
             <div className="favorites-movies__container-wrapper">
@@ -34,7 +36,7 @@ export const Favorites = () => {
     return(
         <>
         {
-            favoriteMoviesStorage.length === 0 ? 
+            favoriteMovies.length === 0 ? 
             <>
                 <Layout/>
                 <div className="empty-favorites__container">
@@ -51,7 +53,7 @@ export const Favorites = () => {
                 <div className = "favorites-container">
                     <Tabs/>
                     <div className = "favorites-movie__wrapper">
-                        <div className="favorites-movie">{favoriteMoviesWrap}</div>
+                        <div className="favorites-movie">{favoritesMoviesWrapp}</div>
                     </div>
                 </div>
              </>
