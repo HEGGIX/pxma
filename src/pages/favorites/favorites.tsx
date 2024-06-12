@@ -16,6 +16,7 @@ export const Favorites = () => {
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
     const favoriteMoviesStorage = JSON.parse(localStorage.getItem("movie"));
+    console.log(favoriteMoviesStorage)
     const favoriteMoviesWrap = favoriteMoviesStorage.map(({Poster, Title, Type, imdbID}:IMoviesItem) => {
         return(
             <>

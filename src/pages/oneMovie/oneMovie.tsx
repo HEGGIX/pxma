@@ -15,10 +15,19 @@ import { useFetchMovie } from "../../hooks/useFetchMovie";
 
 
 export const OneMovie = () => {
+    const [oneMovie, setOneMovie] = useState({
+        Poster:"",
+        Type:"",
+        Title:"",
+        Genre:"",
+        imdbRating:  "",
+        Runtime:  "",
+        Plot:  ""
+    })
     const{imdbID}=useParams();
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
-    const {Poster,Title,Genre,imdbRating,Runtime,Plot} = useFetchMovie(imdbID)
+    const {Poster,Title,Genre,imdbRating,Runtime,Plot} = useFetchMovie(imdbID,oneMovie,setOneMovie)
     return(
         <>
         <Layout/>
@@ -27,7 +36,7 @@ export const OneMovie = () => {
             <div className = "oneMovie__poster-container">
                 <img className = "oneMovie-poster" src={Poster} alt="movie" />
                 <div className = "oneMovie__btn-container">
-                    <button className = {themeContext.themeIsActive === false ? "oneMovie-btn left" : "oneMovie-btn left white"} onClick = {() => dispatch(addFavoriteMovies({oneMovie}))}><Favorites/></button>
+                    <button className = {themeContext.themeIsActive === false ? "oneMovie-btn left" : "oneMovie-btn left white"} onClick = {() =>dispatch(addFavoriteMovies({oneMovie}))}><Favorites/></button>
                     <button className = {themeContext.themeIsActive === false ? "oneMovie-btn right" : "oneMovie-btn right white"}><Share/></button>
                 </div>
             </div>
