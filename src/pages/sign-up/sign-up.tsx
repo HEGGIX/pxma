@@ -26,7 +26,6 @@ export const SignUp = () => {
     })
     const {signin}=useAuth()
     const location =useLocation()
-    // const fromPage=location.state.from.pathname||'/'
     const submitHandler =(event:React.ChangeEvent<HTMLFormElement>)=>{
         event?.preventDefault()
         dispatch(signUpUser(value))

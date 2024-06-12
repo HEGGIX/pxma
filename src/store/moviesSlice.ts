@@ -1,13 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { IMoviesItem } from "../types/types";
 
-
-export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (search,{rejectWithValue})=> {
+export const fetchMovies=createAsyncThunk('movies/fetchMovies', async (page,{rejectWithValue})=> {
   try {
        const moviesList = [];
 
         let page = 1;
-        while (page <= 3) {
+        while (page <=3) {
           const res = await fetch(`https://www.omdbapi.com/?apikey=b5364880&s=Batman&page=${page}`);
           const movies = await res.json();
           movies.Search.forEach((movie) => moviesList.push(movie));
@@ -47,12 +46,7 @@ const moviesSlice =createSlice({
     reducers:{
       setSearchMovies(state,action){
         state.searchMovies = action.payload
-        console.log(action.payload)
-        // state.result.push(state.movies.map((movie) => { movie.Title.includes(action.payload)?state.result.push(movie):state.result.push("нет фильмов")}))
-    },
-      setSearchChange(state,action){
-        
-      }
+    }
     },
     extraReducers: builder => {
         builder
@@ -65,7 +59,6 @@ const moviesSlice =createSlice({
             state.error=null
             state.movies=action.payload
             state.result =  state.movies.map((movie:IMoviesItem)=> movie.Title.includes(state.searchMovies))
-            console.log(state.result)
           })
           .addCase(fetchMovies.rejected,(state,action)=>{
             state.status='rejected'
@@ -74,5 +67,5 @@ const moviesSlice =createSlice({
       }
 })
 
-export const {setSearchMovies,setSearchChange}=moviesSlice.actions
+export const {setSearchMovies,debouncedSearch}=moviesSlice.actions
 export default moviesSlice.reducer

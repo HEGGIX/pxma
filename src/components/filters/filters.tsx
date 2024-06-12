@@ -20,10 +20,8 @@ export const Filters = () => {
                     <Sort/>
                     <MovieName/>
                     <div className="filters-genre__container">
-                        <form>
-                            <h3 className="genre-title">Genre</h3>
-                            <Genres/>
-                        </form>
+                        <h3 className="filters-genre__title">Genres</h3>
+                        <Genres/>
                     </div>
                     <SortInput placeholderFrom="from" placeholderTo="to" title = "Years"/>
                     <SortInput placeholderFrom="from" placeholderTo="to" title = "Ratings"/>

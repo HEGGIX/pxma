@@ -1,6 +1,6 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css'
-import { AuthContext, FiltersContext, ThemeContext } from './context/context'
+import { FiltersContext, ThemeContext } from './context/context'
 import { useEffect, useState } from "react";
 import { SignIn } from './pages/sign-in/sign-in';
 import { SignUp } from './pages/sign-up/sign-up';

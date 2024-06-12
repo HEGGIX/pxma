@@ -58,7 +58,7 @@ export const getUser =createAsyncThunk('user/sigIN',async (userLogin,{rejectWith
                 },
             })
             const data =await responce.json()
-            console.log(data)
+            console.log("sign-in", data)
             localStorage.setItem('Login',JSON.stringify(data))
          
     }

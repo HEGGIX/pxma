@@ -1,10 +1,12 @@
 .moviesGenre{
-    width: 27.5%;
     height: 30px;
     background: #242426;
     border-radius: 6px;
     display: flex;
     justify-content: space-between;
+    margin: 10px;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 
 .moviesGenre-text{

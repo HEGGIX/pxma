@@ -1,10 +1,7 @@
 import { Header } from "./components/header/header"
-import { Tabs } from "./ui-components/tabs/tabs"
-import { Footer } from "./components/footer/footer"
 import { FiltersContext } from "./context/context"
-import { useContext, useState } from "react"
+import { useContext} from "react"
 import "./Layout.scss"
-import { Filters } from "./components/filters/filters"
 
 
 export const Layout = () =>{
@@ -13,9 +10,7 @@ export const Layout = () =>{
         <>
             <div className={context.isActive ? "layout active" : "layout"}>
                 <Header/>
-                {/* <Tabs/> */}
             </div>
-            {/* <Footer/> */}
         </>
     )
 }

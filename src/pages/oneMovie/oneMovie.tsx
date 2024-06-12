@@ -10,29 +10,15 @@ import {Layout} from "../../Layout"
 import { Tabs } from "../../ui-components/tabs/tabs";
 import { MoveDescription } from "../../ui-components/moveDescription/moveDescription";
 import { addFavoriteMovies } from "../../store/favoritesSlice";
-import { fetchOneMovie } from "../../store/moviesSlice";
 import { ThemeContext } from "../../context/context";
+import { useFetchMovie } from "../../hooks/useFetchMovie";
 
 
 export const OneMovie = () => {
     const{imdbID}=useParams();
-    const [oneMovie, setOneMovie] = useState({
-        Poster:"",
-        Type:"",
-        Title:"",
-        Genre:"",
-        imdbRating:  "",
-        Runtime:  "",
-        Plot:  ""
-    })
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
-    useEffect(() => {
-        fetch(`https://www.omdbapi.com/?apikey=b5364880&i=${imdbID}`)
-            .then((responce) => responce.json())
-            .then((data) =>setOneMovie(data));
-        }, [imdbID]);
-    const {Poster,Title,Genre,imdbRating,Runtime,Plot}=oneMovie
+    const {Poster,Title,Genre,imdbRating,Runtime,Plot} = useFetchMovie(imdbID)
     return(
         <>
         <Layout/>

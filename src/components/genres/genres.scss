@@ -1,4 +1,12 @@
 .genres{
     background: #323537;
+    border: none;
     border-radius: 10px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding: 5px 0;
 }

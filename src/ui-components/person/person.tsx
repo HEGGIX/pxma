@@ -1,14 +1,19 @@
 import "./person.scss"
 import "./personMedia.scss"
 import {ReactComponent as Arrow} from "../../assets/person-arrow.svg"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { ExitContext, ThemeContext } from "../../context/context"
-import { useSelector } from "react-redux"
+import { useSelector,useDispatch } from "react-redux"
+import { getUserInfo } from "../../store/userSlice"
 
-export const Person = (props) => {
-    const {username} = useSelector((state)=>state.user.user)||{username:'Your Name'}
+export const Person = () => {
+    const {username} = useSelector((state)=>state.user.user)
     const themeContext = useContext(ThemeContext)
     const exitContext = useContext(ExitContext)
+    const dispatch = useDispatch()
+    useEffect(()=>{
+        dispatch(getUserInfo())
+      },[])
     return(
         <div className="person-btn__container">
             <div className="person-btn__laters">

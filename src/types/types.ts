@@ -17,6 +17,16 @@ export interface IMoviesItem{
     Plot: string
 }
 
+export interface IOneMovie{
+    Poster:string,
+    Type:string,
+    Title:string,
+    Genre:string,
+    imdbRating:string,
+    Runtime:string,
+    Plot:string
+}
+
 export interface ISearchMovie{
     Poster: string,
     Title: string,
