@@ -11,9 +11,6 @@ export const Genres = () => {
             <MoviesGenre text = {"Adventure"}/>
             <MoviesGenre text = {"Sci-fi"}/>
             <MoviesGenre text = {"Fantasy"}/>
-            <MoviesGenre text = {"Animation"}/>
-            <MoviesGenre text = {"Mystery"}/>
-            <MoviesGenre text = {"Thriller"}/>
         </div>
         </>
     )

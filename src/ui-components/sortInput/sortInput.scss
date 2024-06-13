@@ -1,6 +1,6 @@
 .sort-input__container{
     width: 84.47%;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .sort-input__title{
@@ -20,7 +20,7 @@
 
 .sort-input{
     width: 42.53%;
-    height: 55px;
+    height: 30px;
     background: #323537;
     color: #80858B;
     border: 1px solid #323537;
@@ -45,8 +45,4 @@
     &:disabled{
         background: #80858B;
     }
-}
-
-.country-input__container{
-    margin-bottom: 110px;
 }
