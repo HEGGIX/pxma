@@ -115,7 +115,11 @@ export const getUserInfo=createAsyncThunk('user/getUserInfo',async (_,{rejectWit
 const userSlice = createSlice({
     name:"user",
     initialState:{
-        user:{username:'Your Name'},
+        user:{
+            username:'Your Name',
+            email:"",
+            password:null
+        },
         tokenStatus: false
     },
     reducers:{

@@ -7,8 +7,8 @@ import { Layout } from "../../Layout";
 import { IMoviesItem } from "../../types/types";
 import { Tabs } from "../../ui-components/tabs/tabs";
 import { ReactComponent as Empty } from "../../assets/empty.svg";
-import { removeFavoriteMovies } from "../../store/favoritesSlice";
-import { useContext } from "react";
+import { addStorage, removeFavoriteMovies } from "../../store/favoritesSlice";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "../../context/context";
 
 
@@ -17,8 +17,9 @@ export const Favorites = () => {
     const dispatch = useDispatch()
     const themeContext = useContext(ThemeContext)
     const favoriteMovies = useSelector(state => state.favorites.favoriteMovies);
-    // console.log(favoriteMoviesStorage.map(({Poster, Title, Type, imdbID}:IMoviesItem)))
-    
+    useEffect(() => {
+        dispatch(addStorage)
+    },[])
     const favoritesMoviesWrapp = favoriteMovies.map(({Poster, Title, Type, imdbID}:IMoviesItem) => {
         return(
             <>
