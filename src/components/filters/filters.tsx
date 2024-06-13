@@ -1,4 +1,5 @@
 import "./filter.scss";
+import "./filtersMedia.scss";
 import { ReactComponent as Close } from "../../assets/close.svg";
 import { Sort } from "../../ui-components/sort/sort";
 import { MovieName } from "../../ui-components/movieName/movieName";
