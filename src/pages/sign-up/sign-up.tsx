@@ -5,7 +5,7 @@ import { Button } from "../../ui-components/button/button"
 import { inputData } from "../../ui-components/input/data-input"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useDispatch } from "react-redux"
-import React,{ useEffect, useState } from "react"
+import React,{useState } from "react"
 import { signUpUser } from "../../store/userSlice"
 import { useAuth } from "../../hooks/useAuth"
 import { Action, ThunkDispatch } from "@reduxjs/toolkit"
@@ -13,9 +13,6 @@ import AuthProvider from "../../hooks/authProvider"
 
 
 export const SignUp = () => {
-    useEffect(() => {
-        document.body.style.removeProperty("background");
-    },[])
     const navigate = useNavigate()
     const dispatch = useDispatch<ThunkDispatch<unknown, unknown, Action>>();
     const [value,setValue]=useState({
