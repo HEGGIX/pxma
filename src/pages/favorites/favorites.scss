@@ -46,6 +46,13 @@
     }
 }
 
+.movies-text__container{
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .favorites-remove__btn{
     width: 98%;
     height: 30px;

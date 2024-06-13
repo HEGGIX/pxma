@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { ActivateUser, User } from "../types/types";
+import { useNavigate } from "react-router-dom"
 
 export const signUpUser = createAsyncThunk ("user/signUpUser",async (activateObj:User,{rejectWithValue,dispatch})=>{
     try {
@@ -126,7 +127,13 @@ const userSlice = createSlice({
         addUser(state,action){
             state.user=action.payload
         },
+        logOut(state){
+            state.user.username = "Your name"
+            state.user.email = ""
+            state.user.password = null
+            localStorage.removeItem("Login")
+        }
     }
 })
-export const {addUser}=userSlice.actions
+export const {addUser,logOut}=userSlice.actions
 export default userSlice.reducer
